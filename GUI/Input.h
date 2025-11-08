@@ -8,6 +8,7 @@ class Input		//The application manager should have a pointer to this class
 {
 private:
 	window *pWind;	//Pointer to the Graphics Window
+	jdjdj
 
 public:
 	Input(window*);
