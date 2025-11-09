@@ -10,8 +10,7 @@ void Input::GetPointClicked(int &x, int &y)
 {
 	pWind->WaitMouseClick(x, y);	//Wait for mouse click
 }
-//Omar
-//gharbawy 
+
 string Input::GetSrting(Output *pOut)
 {
 	///TODO: Implement this Function
@@ -73,12 +72,3 @@ Input::~Input()
 {
 }
 
-// azyk ya orashyyyyy
-
-
-
-
-
-
-
-//omar
