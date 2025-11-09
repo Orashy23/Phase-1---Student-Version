@@ -96,6 +96,13 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_AND2] = "images\\Menu\\Menu_AND2.jpg";
 	MenuItemImages[ITM_OR2]  = "images\\Menu\\Menu_OR2.jpg";
 	MenuItemImages[ITM_EXIT] = "images\\Menu\\Menu_Exit.jpg";
+	MenuItemImages[ITM_NAND2] = "";//add path for NAND TODO
+	MenuItemImages[ITM_NOR2] = "";//add path for NAND TODO
+	MenuItemImages[ITM_XOR2] = "";//add path for NAND TODO
+	MenuItemImages[ITM_XNOR2] = "";//add path for NAND TODO
+	MenuItemImages[ITM_AND3] = "";//add path for NAND TODO
+	MenuItemImages[ITM_OR3] = "";//add path for NAND TODO
+	
 
 	//TODO: Prepare image for each menu item and add it to the list
 
@@ -136,6 +143,21 @@ void Output::DrawAND2(GraphicsInfo r_GfxInfo, bool selected) const
 	//Set the Image Width & Height by AND2 Image Parameter in UI_Info
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.AND2_Width, UI.AND2_Height);
 }
+
+void Output::DrawOR2(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	string GateImage;
+	if (selected)	//use image in the highlighted case
+		GateImage = "Images\\Gates\\Gate_AND2_Hi.jpg"; //7ot IMAGE lel OR HIGHLITED mn GATES me4 MENU 
+	else
+		GateImage = "Images\\Gates\\Gate_AND2.jpg"; //7ot IMAGE lel OR mn GATES me4 MENU
+
+	//Draw AND2 Gate at Gfx_Info (1st corner)
+	//Set the Image Width & Height by AND2 Image Parameter in UI_Info
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.AND2_Width, UI.AND2_Height);
+}
+
+
 
 //TODO: Add similar functions to draw all components
 
