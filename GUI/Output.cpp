@@ -172,4 +172,10 @@ Output::~Output()
 {
 	delete pWind;
 }
-//hi hi captin 
+
+
+
+
+
+
+//kkkkk
