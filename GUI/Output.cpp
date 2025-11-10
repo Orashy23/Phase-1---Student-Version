@@ -172,3 +172,7 @@ Output::~Output()
 {
 	delete pWind;
 }
+
+
+
+//Orashy
