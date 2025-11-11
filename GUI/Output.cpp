@@ -96,7 +96,7 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_AND2] = "images\\Menu\\Menu_AND2.jpg";
 	MenuItemImages[ITM_OR2]  = "images\\Menu\\Menu_OR2.jpg";
 	MenuItemImages[ITM_EXIT] = "images\\Menu\\Menu_Exit.jpg";
-	MenuItemImages[ITM_NAND2] = "";//add path for NAND TODO
+	MenuItemImages[ITM_NAND2] = "images\\Menu\\Menu_NAND2.jpg";
 	MenuItemImages[ITM_NOR2] = "";//add path for NOR TODO
 	MenuItemImages[ITM_XOR2] = "";//add path for XOR TODO
 	MenuItemImages[ITM_XNOR2] = "";//add path for XNOR TODO
@@ -159,8 +159,8 @@ void Output::DrawOR2(GraphicsInfo r_GfxInfo, bool selected) const
 
 
 
-//TODO: Add similar functions to draw all components
 
+//TODO: Add similar functions to draw all components  omar
 
 void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 {
