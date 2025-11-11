@@ -100,8 +100,8 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_NOR2] = "images\\Menu\\Menu_NOR2.jpg";
 	MenuItemImages[ITM_XOR2] = "images\\Menu\\Menu_XOR2.jpg";
 	MenuItemImages[ITM_XNOR2] = "images\\Menu\\Menu_XNOR2.jpg";
-	MenuItemImages[ITM_AND3] = "";//add path for 3AND TODO
-	MenuItemImages[ITM_OR3] = "";//add path for 3OR TODO
+	MenuItemImages[ITM_AND3] = "images\\Menu\\Menu_AND3.jpg";
+	MenuItemImages[ITM_OR3] = "images\\Menu\\Menu_OR3.jpg";
 	
 
 	//TODO: Prepare image for each menu item and add it to the list
