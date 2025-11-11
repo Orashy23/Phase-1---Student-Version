@@ -175,12 +175,8 @@ Output::~Output()
 
 
 
-//Orashy
+
+//testing comment
 
 
 
-
-
-
-
-//from 3omda3
