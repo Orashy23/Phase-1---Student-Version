@@ -97,7 +97,7 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_OR2]  = "images\\Menu\\Menu_OR2.jpg";
 	MenuItemImages[ITM_EXIT] = "images\\Menu\\Menu_Exit.jpg";
 	MenuItemImages[ITM_NAND2] = "images\\Menu\\Menu_NAND2.jpg";
-	MenuItemImages[ITM_NOR2] = "";//add path for NOR TODO
+	MenuItemImages[ITM_NOR2] = "images\\Menu\\Menu_NOR2.jpg";
 	MenuItemImages[ITM_XOR2] = "";//add path for XOR TODO
 	MenuItemImages[ITM_XNOR2] = "";//add path for XNOR TODO
 	MenuItemImages[ITM_AND3] = "";//add path for 3AND TODO
