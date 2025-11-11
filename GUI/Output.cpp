@@ -173,11 +173,3 @@ Output::~Output()
 	delete pWind;
 }
 
-
-
-
-
-//testing comment
-
-
-
