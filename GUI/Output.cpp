@@ -173,14 +173,3 @@ Output::~Output()
 	delete pWind;
 }
 
-
-
-//Orashy
-
-
-
-
-
-
-
-//from 3omda3

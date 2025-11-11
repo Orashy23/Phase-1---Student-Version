@@ -21,6 +21,7 @@ string Input::GetSrting(Output *pOut)
 
 	return NULL;
 }
+//Gharbawy
 
 //This function reads the position where the user clicks to determine the desired action
 //TODO
@@ -51,6 +52,7 @@ ActionType Input::GetUserAction() const
 			}
 		}
 	
+	
 		//[2] User clicks on the drawing area
 		if ( y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
 		{
@@ -66,6 +68,8 @@ ActionType Input::GetUserAction() const
 	}
 
 }
+
+//Orashy
 
 
 Input::~Input()
