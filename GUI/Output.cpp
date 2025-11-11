@@ -160,7 +160,7 @@ void Output::DrawOR2(GraphicsInfo r_GfxInfo, bool selected) const
 
 
 
-//TODO: Add similar functions to draw all components  omar
+//TODO: Add similar functions to draw all components  
 
 void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 {
