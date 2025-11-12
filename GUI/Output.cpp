@@ -273,13 +273,7 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 	int y1 = r_GfxInfo.y1;
 	int x2 = r_GfxInfo.x2;
 	int y2 = r_GfxInfo.y2;
-	if (selected) {
-
-		pWind->SetPen(UI.SelectColor, 2);
-	}
-	else {
-		pWind->SetPen(UI.ConnColor, 2);
-	}
+	
 	if(x1==x2 || y1==y2) //straight line
 		pWind->DrawLine(x1, y1, x2, y2);
 	else //with a bend
