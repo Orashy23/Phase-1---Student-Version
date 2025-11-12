@@ -142,7 +142,7 @@ int main()
 
 		switch (ActType)
 		{
-		case ADD_Buff:
+		case ADD_BUFF:
 				pOut->PrintMsg("Action: add a buffer gate , Click anywhere");
 				break;
 
