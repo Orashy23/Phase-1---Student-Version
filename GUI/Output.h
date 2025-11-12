@@ -24,7 +24,7 @@ public:
 	// Draws 2-input AND gate
 	void DrawAND2(GraphicsInfo r_GfxInfo, bool selected = false) const;
 
-	///TODO: Make similar functions for drawing all other gates, switch, and LED, .. etc
+	///TODO : Make similar functions for drawing all other gates, switch, and LED, .. etc
 
 	// Draws Connection
 	void DrawConnection(GraphicsInfo r_GfxInfo, bool selected = false) const;
