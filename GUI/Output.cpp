@@ -102,7 +102,7 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_XNOR2] = "images\\Menu\\Menu_XNOR2.jpg";
 	MenuItemImages[ITM_AND3] = "images\\Menu\\Menu_AND3.jpg";
 	MenuItemImages[ITM_NOR3] = "images\\Menu\\Menu_NOR3.jpg";
-	MenuItemImages[ITM_XOR3] = "images\\Menu\\Menu_XOR3.jpg"; //check ya 3omda
+	MenuItemImages[ITM_XOR3] = "images\\Menu\\Menu_XOR3.jpg"; //check ya 3omda 
 
 	//TODO: Prepare image for each menu item and add it to the list
 
@@ -158,12 +158,143 @@ void Output::DrawOR2(GraphicsInfo r_GfxInfo, bool selected) const
 }
 
 
+void Output::DrawXOR2(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	string GateImage;
+	if (selected)	//use image in the highlighted case
+		GateImage = "Images\\Gates\\Gate_AND2_Hi.jpg"; //7ot IMAGE lel OR HIGHLITED mn GATES me4 MENU 
+	else
+		GateImage = "Images\\Gates\\Gate_AND2.jpg"; //7ot IMAGE lel OR mn GATES me4 MENU
 
+	//Draw AND2 Gate at Gfx_Info (1st corner)
+	//Set the Image Width & Height by AND2 Image Parameter in UI_Info
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.AND2_Width, UI.AND2_Height);
+}
+
+void Output::DrawXNOR2(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	string GateImage;
+	if (selected)	//use image in the highlighted case
+		GateImage = "Images\\Gates\\Gate_AND2_Hi.jpg"; //7ot IMAGE lel OR HIGHLITED mn GATES me4 MENU 
+	else
+		GateImage = "Images\\Gates\\Gate_AND2.jpg"; //7ot IMAGE lel OR mn GATES me4 MENU
+
+	//Draw AND2 Gate at Gfx_Info (1st corner)
+	//Set the Image Width & Height by AND2 Image Parameter in UI_Info
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.AND2_Width, UI.AND2_Height);
+}
+
+void Output::DrawNAND2(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	string GateImage;
+	if (selected)	//use image in the highlighted case
+		GateImage = "Images\\Gates\\Gate_AND2_Hi.jpg"; //7ot IMAGE lel OR HIGHLITED mn GATES me4 MENU 
+	else
+		GateImage = "Images\\Gates\\Gate_AND2.jpg"; //7ot IMAGE lel OR mn GATES me4 MENU
+
+	//Draw AND2 Gate at Gfx_Info (1st corner)
+	//Set the Image Width & Height by AND2 Image Parameter in UI_Info
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.AND2_Width, UI.AND2_Height);
+}
+
+void Output::DrawXOR3(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	string GateImage;
+	if (selected)	//use image in the highlighted case
+		GateImage = "Images\\Gates\\Gate_OR2_Hi.jpg"; //7ot IMAGE lel OR HIGHLITED mn GATES me4 MENU 
+	else
+		GateImage = "Images\\Gates\\Gate_OR2.jpg"; //7ot IMAGE lel OR mn GATES me4 MENU
+
+	//Draw OR2 Gate at Gfx_Info (1st corner)
+	//Set the Image Width & Height by OR2 Image Parameter in UI_Info
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
+}
+
+void Output::DrawAND3(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	string GateImage;
+	if (selected)	//use image in the highlighted case
+		GateImage = "Images\\Gates\\Gate_OR2_Hi.jpg"; //7ot IMAGE lel OR HIGHLITED mn GATES me4 MENU 
+	else
+		GateImage = "Images\\Gates\\Gate_OR2.jpg"; //7ot IMAGE lel OR mn GATES me4 MENU
+
+	//Draw OR2 Gate at Gfx_Info (1st corner)
+	//Set the Image Width & Height by OR2 Image Parameter in UI_Info
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
+}
+
+void Output::DrawNOR3(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	string GateImage;
+	if (selected)	//use image in the highlighted case
+		GateImage = "Images\\Gates\\Gate_OR2_Hi.jpg"; //7ot IMAGE lel OR HIGHLITED mn GATES me4 MENU 
+	else
+		GateImage = "Images\\Gates\\Gate_OR2.jpg"; //7ot IMAGE lel OR mn GATES me4 MENU
+
+	//Draw OR2 Gate at Gfx_Info (1st corner)
+	//Set the Image Width & Height by OR2 Image Parameter in UI_Info
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
+}
+
+void Output::DrawNOR2(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	string GateImage;
+	if (selected)	//use image in the highlighted case
+		GateImage = "Images\\Gates\\Gate_OR2_Hi.jpg"; //7ot IMAGE lel OR HIGHLITED mn GATES me4 MENU 
+	else
+		GateImage = "Images\\Gates\\Gate_OR2.jpg"; //7ot IMAGE lel OR mn GATES me4 MENU
+
+	//Draw OR2 Gate at Gfx_Info (1st corner)
+	//Set the Image Width & Height by OR2 Image Parameter in UI_Info
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
+}
+
+void Output::DrawINV(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	string GateImage;
+	if (selected)	//use image in the highlighted case
+		GateImage = "Images\\Gates\\Gate_OR2_Hi.jpg"; //7ot IMAGE lel OR HIGHLITED mn GATES me4 MENU 
+	else
+		GateImage = "Images\\Gates\\Gate_OR2.jpg"; //7ot IMAGE lel OR mn GATES me4 MENU
+
+	//Draw OR2 Gate at Gfx_Info (1st corner)
+	//Set the Image Width & Height by OR2 Image Parameter in UI_Info
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
+}
+
+void Output::DrawBUFF(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	string GateImage;
+	if (selected)	//use image in the highlighted case
+		GateImage = "Images\\Gates\\Gate_OR2_Hi.jpg"; //7ot IMAGE lel OR HIGHLITED mn GATES me4 MENU 
+	else
+		GateImage = "Images\\Gates\\Gate_OR2.jpg"; //7ot IMAGE lel OR mn GATES me4 MENU
+
+	//Draw OR2 Gate at Gfx_Info (1st corner)
+	//Set the Image Width & Height by OR2 Image Parameter in UI_Info
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
+}
 
 //TODO: Add similar functions to draw all components  
 
 void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 {
+	int x1 = r_GfxInfo.x1;
+	int y1 = r_GfxInfo.y1;
+	int x2 = r_GfxInfo.x2;
+	int y2 = r_GfxInfo.y2;
+	if (selected) {
+		pWind->SetPen(UI.SelectColor, 3);
+	}
+	else {
+		pWind->SetPen(UI.ConnColor, 3);
+	}
+	
+	
+	
+	
+	
+	
 	//TODO: Add code to draw connection
 }
 
