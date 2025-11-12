@@ -93,16 +93,16 @@ void Output::CreateDesignToolBar() const
 
 	//First prepare List of images for each menu item
 	string MenuItemImages[ITM_DSN_CNT];
-	MenuItemImages[ITM_AND2] = "images\\Menu\\Menu_AND2.jpg";
-	MenuItemImages[ITM_OR2]  = "images\\Menu\\Menu_OR2.jpg";
-	MenuItemImages[ITM_EXIT] = "images\\Menu\\Menu_Exit.jpg";
-	MenuItemImages[ITM_NAND2] = "images\\Menu\\Menu_NAND2.jpg";
-	MenuItemImages[ITM_NOR2] = "images\\Menu\\Menu_NOR2.jpg";
-	MenuItemImages[ITM_XOR2] = "images\\Menu\\Menu_XOR2.jpg";
-	MenuItemImages[ITM_XNOR2] = "images\\Menu\\Menu_XNOR2.jpg";
-	MenuItemImages[ITM_AND3] = "images\\Menu\\Menu_AND3.jpg";
-	MenuItemImages[ITM_NOR3] = "images\\Menu\\Menu_NOR3.jpg";
-	MenuItemImages[ITM_XOR3] = "images\\Menu\\Menu_XOR3.jpg"; //check ya 3omda 
+	MenuItemImages[ITM_AND2] = "Images\\Menu\\Menu_AND2.jpg";
+	MenuItemImages[ITM_OR2]  = "Images\\Menu\\Menu_OR2.jpg";
+	MenuItemImages[ITM_EXIT] = "Images\\Menu\\Menu_Exit.jpg";
+	MenuItemImages[ITM_NAND2] = "Images\\Menu\\Menu_NAND2.jpg";
+	MenuItemImages[ITM_NOR2] = "Images\\Menu\\Menu_NOR2.jpg";
+	MenuItemImages[ITM_XOR2] = "Images\\Menu\\Menu_XOR2.jpg";
+	MenuItemImages[ITM_XNOR2] = "Images\\Menu\\Menu_XNOR2.jpg";
+	MenuItemImages[ITM_AND3] = "Images\\Menu\\Menu_AND3.jpg";
+	MenuItemImages[ITM_NOR3] = "Images\\Menu\\Menu_NOR3.jpg";
+	MenuItemImages[ITM_XOR3] = "Images\\Menu\\Menu_XOR3.jpg"; //check ya 3omda 
 
 	//TODO: Prepare image for each menu item and add it to the list
 
