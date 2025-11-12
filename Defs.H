@@ -74,7 +74,8 @@ enum DsgnMenuItem //The items of the design menu (you should add more items)
 	ITM_XOR2,
 	ITM_XNOR2,
 	ITM_AND3,
-	ITM_OR3,
+	ITM_XOR3,
+	ITM_NOR3,
 	//TODO: Add more items names here
 	
 	ITM_DSN_CNT		//no. of design menu items ==> This should be the last line in this enum
