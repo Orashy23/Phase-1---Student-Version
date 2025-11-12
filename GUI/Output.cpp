@@ -279,8 +279,22 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 	else {
 		pWind->SetPen(UI.ConnColor, 2);
 	}
+	if(x1==x2 || y1==y2) //straight line
+		pWind->DrawLine(x1, y1, x2, y2);
+	else //with a bend
+	{
+		int midx = (x1 + x2) / 2;
 
-	pWind->DrawLine(x1, y1, x2, y2);
+		//first segment
+		pWind->DrawLine(x1, y1, midx, y1);
+		//second segment
+		pWind->DrawLine(midx, y1, midx, y2);
+		//third segment
+		pWind->DrawLine(midx, y2, x2, y2);
+	}
+	
+	//pWind->DrawLine(x1, y1, x2, y2)//gharbawy : not sure exactly what to here "flag";
+	
 	//TODO: Add code to draw connection
 }
 
