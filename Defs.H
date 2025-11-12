@@ -6,7 +6,7 @@
 //All possible actions
 enum ActionType 
 {
-	ADD_Buff,			//Add 1-input Buffer gate
+	ADD_BUFF,			//Add 1-input Buffer gate
 	ADD_INV,			//Add 1-input Inverter gate
 	ADD_AND_GATE_2,		//Add 2-input AND gate
 	ADD_OR_GATE_2,		//Add 2-input OR gate
@@ -76,6 +76,8 @@ enum DsgnMenuItem //The items of the design menu (you should add more items)
 	ITM_AND3,
 	ITM_XOR3,
 	ITM_NOR3,
+	ITM_INV,
+	ITM_BUFF,
 	//TODO: Add more items names here
 	
 	ITM_DSN_CNT		//no. of design menu items ==> This should be the last line in this enum

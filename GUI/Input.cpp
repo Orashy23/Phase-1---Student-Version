@@ -41,7 +41,7 @@ ActionType Input::GetUserAction() const
 			//Divide x coord of the point clicked by the menu item width (int division)
 			//if division result is 0 ==> first item is clicked, if 1 ==> 2nd item and so on
 
-			//TODO add the rest of the gates NAND,NOR,XOR,XNOR,3AND,3NOR
+			//TODO add the rest of the gates
 			switch (ClickedItemOrder)
 			{
 			case ITM_AND2: return ADD_AND_GATE_2;
@@ -54,7 +54,8 @@ ActionType Input::GetUserAction() const
 			case ITM_NOR3: return ADD_NOR_GATE_3;
 			case ITM_XOR3: return ADD_XOR_GATE_3;
 			case ITM_EXIT: return EXIT;
-
+			case ITM_INV:    return ADD_INV;
+			case ITM_BUFF:   return ADD_BUFF;
 
 			default: return DSN_TOOL;	//A click on empty place in desgin toolbar
 			}
