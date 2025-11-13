@@ -102,12 +102,15 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_XNOR2] = "..\\Images\\Menu\\Menu_XNOR2.jpg";
 	MenuItemImages[ITM_AND3] = "..\\Images\\Menu\\Menu_AND3.jpg";
 	MenuItemImages[ITM_NOR3] = "..\\Images\\Menu\\Menu_NOR3.jpg";
-	MenuItemImages[ITM_XOR3] = "..\\Images\\Menu\\Menu_XOR3.jpg"; //check ya 3omda 
+	MenuItemImages[ITM_XOR3] = "..\\Images\\Menu\\Menu_XOR3.jpg"; 
+	MenuItemImages[ITM_INV] = "..\\Images\\Menu\\Menu_INV.jpg";
+	MenuItemImages[ITM_BUFF] = "..\\Images\\Menu\\Menu_BUFF.jpg";
+
 
 	//TODO: Prepare image for each menu item and add it to the list
 
 	//Draw menu item one image at a time
-	for (int i = 0; i < 5; i++) //ba3d ma n7ot ba2i el swar nebadel el 5 di bel ITM_DSN_CNT
+	for (int i = 0; i < ITM_DSN_CNT; i++) //ba3d ma n7ot ba2i el swar nebadel el 5 di bel ITM_DSN_CNT
 		pWind->DrawImage(MenuItemImages[i],i*UI.ToolItemWidth,0,UI.ToolItemWidth, UI.ToolBarHeight);
 
 
