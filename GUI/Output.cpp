@@ -269,6 +269,20 @@ void Output::DrawBUFF(GraphicsInfo r_GfxInfo, bool selected) const
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
 }
 
+oid Output::DrawSWITCH(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	string GateImage;
+	if (selected)
+		GateImage = "..\\Images\\Gates\\Gate_SWITCH_Hi.jpg";
+	else
+		GateImage = "..\\Images\\Gates\\Gate_SWITCH.jpg";
+
+	// Draw BUFF gate
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
+}
+
+
+
 //TODO: Add similar functions to draw all components  
 
 void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const

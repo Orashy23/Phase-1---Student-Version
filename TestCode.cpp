@@ -54,6 +54,13 @@ int main()
 
 	///TODO: Add code to draw 2-input NAND gate, Normal and Highlighted
 
+	GfxInfo.x1 = 100;	GfxInfo.y1 = 100;
+	pOut->DrawNAND2(GfxInfo);
+
+	//Drawing Highlighted NAND2 gate
+	GfxInfo.x1 = 100;	GfxInfo.y1 = 200;
+	pOut->DrawNAND2(GfxInfo, true);
+
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	pOut->ClearDrawingArea();
 
@@ -62,14 +69,48 @@ int main()
 	
 	///TODO: Add code to draw 2-input OR and NOR gates, Normal and Highlighted for each
 
-	pIn->GetPointClicked(x,y);	//Wait for any click
+	GfxInfo.x1 = 100;	GfxInfo.y1 = 100;
+	pOut->DrawOR2(GfxInfo);
+
+	//Drawing Highlighted OR2 gate
+	GfxInfo.x1 = 100;	GfxInfo.y1 = 200;
+	pOut->DrawOR2(GfxInfo, true);
+
+	
+
+	GfxInfo.x1 = 300;	GfxInfo.y1 = 100;
+	pOut->DrawNOR2(GfxInfo);
+
+	//Drawing Highlighted NOR2 gate
+	GfxInfo.x1 = 300;	GfxInfo.y1 = 200;
+	pOut->DrawNOR2(GfxInfo, true);
+
+	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->ClearDrawingArea();
+
+
+
+	
 
 	/// 2.4- XOR2 and XNOR2 Gates test
 	pOut->PrintMsg("Drawing 2-input XOR and XNOR gates, Normal and Highlighted,  Click to continue");
 	
 	///TODO: Add code to draw 2-input XOR and XNOR gates, Normal and Highlighted for each
 
+	GfxInfo.x1 = 100;	GfxInfo.y1 = 100;
+	pOut->DrawXOR2(GfxInfo);
+
+	//Drawing Highlighted OR2 gate
+	GfxInfo.x1 = 100;	GfxInfo.y1 = 200;
+	pOut->DrawXOR2(GfxInfo, true);
+
+	GfxInfo.x1 = 300;	GfxInfo.y1 = 100;
+	pOut->DrawXNOR2(GfxInfo);
+
+	//Drawing Highlighted OR2 gate
+	GfxInfo.x1 = 300;	GfxInfo.y1 = 200;
+	pOut->DrawXNOR2(GfxInfo, true);
+	
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	pOut->ClearDrawingArea();
 
@@ -78,6 +119,21 @@ int main()
 	
 	///TODO: Add code to draw Buffer and Inverter Gates, Normal and Highlighted for each
 
+	GfxInfo.x1 = 100;	GfxInfo.y1 = 100;
+	pOut->DrawBUFF(GfxInfo);
+
+	//Drawing Highlighted OR2 gate
+	GfxInfo.x1 = 100;	GfxInfo.y1 = 200;
+	pOut->DrawBUFF(GfxInfo, true);
+
+	GfxInfo.x1 = 300;	GfxInfo.y1 = 100;
+	pOut->DrawINV(GfxInfo);
+
+	//Drawing Highlighted OR2 gate
+	GfxInfo.x1 = 300;	GfxInfo.y1 = 200;
+	pOut->DrawINV(GfxInfo, true);
+	
+	
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	pOut->ClearDrawingArea();
 
@@ -87,6 +143,29 @@ int main()
 	
 	///TODO: Add code to draw 3-input AND, NOR, and XOR Gates, Normal and Highlighted for each
 
+	GfxInfo.x1 = 100;	GfxInfo.y1 = 100;
+	pOut->DrawAND3(GfxInfo);
+
+	
+	GfxInfo.x1 = 100;	GfxInfo.y1 = 200;
+	pOut->DrawAND3(GfxInfo, true);
+
+	GfxInfo.x1 = 300;	GfxInfo.y1 = 100;
+	pOut->DrawNOR3(GfxInfo);
+
+	
+	GfxInfo.x1 = 300;	GfxInfo.y1 = 200;
+	pOut->DrawNOR3(GfxInfo, true);
+
+	GfxInfo.x1 = 500;	GfxInfo.y1 = 100;
+	pOut->DrawXOR3(GfxInfo);
+
+
+	GfxInfo.x1 = 500;	GfxInfo.y1 = 200;
+	pOut->DrawXOR3(GfxInfo, true);
+
+
+
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	pOut->ClearDrawingArea();
 
@@ -94,6 +173,14 @@ int main()
 	pOut->PrintMsg("Drawing Switch and LED, Normal and Highlighted,  Click to continue");
 	
 	///TODO: Add code to draw Switch and LED, Normal and Highlighted for each
+
+	GfxInfo.x1 = 100;	GfxInfo.y1 = 100;
+	pOut->DrawSWITCH(GfxInfo);
+
+
+	GfxInfo.x1 = 100;	GfxInfo.y1 = 200;
+	pOut->DrawSWITCH(GfxInfo, true);
+
 
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	pOut->ClearDrawingArea();
