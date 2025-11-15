@@ -302,3 +302,6 @@ Output::~Output()
 	delete pWind;
 }
 
+
+
+//mariam
