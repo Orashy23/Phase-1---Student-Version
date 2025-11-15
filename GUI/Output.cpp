@@ -191,6 +191,7 @@ void Output::DrawNAND2(GraphicsInfo r_GfxInfo, bool selected) const
 		GateImage = "..\\Images\\Gates\\Gate_NAND2.jpg";
 
 	// Draw NAND2 gate
+	//mari
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.NAND2_Width, UI.NAND2_Height);
 }
 
