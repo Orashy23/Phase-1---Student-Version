@@ -164,7 +164,7 @@ void Output::DrawXOR2(GraphicsInfo r_GfxInfo, bool selected) const
 	if (selected)
 		GateImage = "..\\Images\\Gates\\Gate_XOR2_Hi.jpg";
 	else
-		GateImage = "Images\\Gates\\Gate_XOR2.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_XOR2.jpg";
 
 	// Draw XOR2 gate
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.XOR2_Width, UI.XOR2_Height);
@@ -174,9 +174,9 @@ void Output::DrawXNOR2(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	string GateImage;
 	if (selected)
-		GateImage = "Images\\Gates\\Gate_XNOR2_Hi.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_XNOR2_Hi.jpg";
 	else
-		GateImage = "Images\\Gates\\Gate_XNOR2.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_XNOR2.jpg";
 
 	// Draw XNOR2 gate
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.XNOR2_Width, UI.XNOR2_Height);
@@ -198,9 +198,9 @@ void Output::DrawNOR2(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	string GateImage;
 	if (selected)
-		GateImage = "Images\\Gates\\Gate_NOR2_Hi.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_NOR2_Hi.jpg";
 	else
-		GateImage = "Images\\Gates\\Gate_NOR2.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_NOR2.jpg";
 
 	// Draw NOR2 gate
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
@@ -210,9 +210,9 @@ void Output::DrawXOR3(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	string GateImage;
 	if (selected)
-		GateImage = "Images\\Gates\\Gate_XOR3_Hi.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_XOR3_Hi.jpg";
 	else
-		GateImage = "Images\\Gates\\Gate_XOR3.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_XOR3.jpg";
 
 	// Draw XOR3 gate
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
@@ -222,9 +222,9 @@ void Output::DrawAND3(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	string GateImage;
 	if (selected)
-		GateImage = "Images\\Gates\\Gate_AND3_Hi.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_AND3_Hi.jpg";
 	else
-		GateImage = "Images\\Gates\\Gate_AND3.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_AND3.jpg";
 
 	// Draw AND3 gate
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
@@ -234,9 +234,9 @@ void Output::DrawNOR3(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	string GateImage;
 	if (selected)
-		GateImage = "Images\\Gates\\Gate_NOR3_Hi.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_NOR3_Hi.jpg";
 	else
-		GateImage = "Images\\Gates\\Gate_NOR3.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_NOR3.jpg";
 
 	// Draw NOR3 gate
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
@@ -248,9 +248,9 @@ void Output::DrawINV(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	string GateImage;
 	if (selected)
-		GateImage = "Images\\Gates\\Gate_INV_Hi.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_INV_Hi.jpg";
 	else
-		GateImage = "Images\\Gates\\Gate_INV.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_INV.jpg";
 
 	// Draw INV gate
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
@@ -260,9 +260,9 @@ void Output::DrawBUFF(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	string GateImage;
 	if (selected)
-		GateImage = "Images\\Gates\\Gate_BUFF_Hi.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_BUFF_Hi.jpg";
 	else
-		GateImage = "Images\\Gates\\Gate_BUFF.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_BUFF.jpg";
 
 	// Draw BUFF gate
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
