@@ -162,7 +162,7 @@ void Output::DrawXOR2(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	string GateImage;
 	if (selected)
-		GateImage = "Images\\Gates\\Gate_XOR2_Hi.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_XOR2_Hi.jpg";
 	else
 		GateImage = "Images\\Gates\\Gate_XOR2.jpg";
 
@@ -186,9 +186,9 @@ void Output::DrawNAND2(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	string GateImage;
 	if (selected)
-		GateImage = "Images\\Gates\\Gate_NAND2_Hi.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_NAND2_Hi.jpg";
 	else
-		GateImage = "Images\\Gates\\Gate_NAND2.jpg";
+		GateImage = "..\\Images\\Gates\\Gate_NAND2.jpg";
 
 	// Draw NAND2 gate
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.NAND2_Width, UI.NAND2_Height);
