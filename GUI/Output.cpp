@@ -269,7 +269,7 @@ void Output::DrawBUFF(GraphicsInfo r_GfxInfo, bool selected) const
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
 }
 
-oid Output::DrawSWITCH(GraphicsInfo r_GfxInfo, bool selected) const
+void Output::DrawSWITCH(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	string GateImage;
 	if (selected)
