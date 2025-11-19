@@ -100,7 +100,7 @@ int main()
 	GfxInfo.x1 = 100;	GfxInfo.y1 = 100;
 	pOut->DrawXOR2(GfxInfo);
 
-	//Drawing Highlighted OR2 gate
+	//Drawing Highlighted XOR2 gate
 	GfxInfo.x1 = 100;	GfxInfo.y1 = 200;
 	pOut->DrawXOR2(GfxInfo, true);
 
@@ -108,7 +108,7 @@ int main()
 	pOut->DrawXNOR2(GfxInfo);
 
 
-	//Drawing Highlighted OR2 gate
+	//Drawing Highlighted XNOR2 gate
 	GfxInfo.x1 = 300;	GfxInfo.y1 = 200;
 	pOut->DrawXNOR2(GfxInfo, true);
 	
@@ -123,7 +123,7 @@ int main()
 	GfxInfo.x1 = 100;	GfxInfo.y1 = 100;
 	pOut->DrawBUFF(GfxInfo);
 
-	
+	//Drawing Highlighted BUFF gate
 	GfxInfo.x1 = 100;	GfxInfo.y1 = 200;
 	pOut->DrawBUFF(GfxInfo, true);
 
@@ -131,6 +131,7 @@ int main()
 	pOut->DrawINV(GfxInfo);
 
 	
+	//Drawing Highlighted INV gate
 	GfxInfo.x1 = 300;	GfxInfo.y1 = 200;
 	pOut->DrawINV(GfxInfo, true);
 	
@@ -147,21 +148,25 @@ int main()
 	GfxInfo.x1 = 100;	GfxInfo.y1 = 100;
 	pOut->DrawAND3(GfxInfo);
 
-	
+	//Drawing Highlighted AND3 gate
+
 	GfxInfo.x1 = 100;	GfxInfo.y1 = 200;
 	pOut->DrawAND3(GfxInfo, true);
+
+
 
 	GfxInfo.x1 = 300;	GfxInfo.y1 = 100;
 	pOut->DrawNOR3(GfxInfo);
 
-	
+	//Drawing Highlighted NOR3 gate
+
 	GfxInfo.x1 = 300;	GfxInfo.y1 = 200;
 	pOut->DrawNOR3(GfxInfo, true);
 
 	GfxInfo.x1 = 500;	GfxInfo.y1 = 100;
 	pOut->DrawXOR3(GfxInfo);
 
-
+	//Drawing Highlighted XOR3 gate
 	GfxInfo.x1 = 500;	GfxInfo.y1 = 200;
 	pOut->DrawXOR3(GfxInfo, true);
 
@@ -178,7 +183,7 @@ int main()
 	GfxInfo.x1 = 100;	GfxInfo.y1 = 100;
 	pOut->DrawSWITCH(GfxInfo);
 
-
+	//Drawing Highlighted SWITCH gate
 	GfxInfo.x1 = 100;	GfxInfo.y1 = 200;
 	pOut->DrawSWITCH(GfxInfo, true);
 
