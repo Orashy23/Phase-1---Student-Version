@@ -107,6 +107,7 @@ int main()
 	GfxInfo.x1 = 300;	GfxInfo.y1 = 100;
 	pOut->DrawXNOR2(GfxInfo);
 
+
 	//Drawing Highlighted OR2 gate
 	GfxInfo.x1 = 300;	GfxInfo.y1 = 200;
 	pOut->DrawXNOR2(GfxInfo, true);
@@ -122,14 +123,14 @@ int main()
 	GfxInfo.x1 = 100;	GfxInfo.y1 = 100;
 	pOut->DrawBUFF(GfxInfo);
 
-	//Drawing Highlighted OR2 gate
+	
 	GfxInfo.x1 = 100;	GfxInfo.y1 = 200;
 	pOut->DrawBUFF(GfxInfo, true);
 
 	GfxInfo.x1 = 300;	GfxInfo.y1 = 100;
 	pOut->DrawINV(GfxInfo);
 
-	//Drawing Highlighted OR2 gate
+	
 	GfxInfo.x1 = 300;	GfxInfo.y1 = 200;
 	pOut->DrawINV(GfxInfo, true);
 	
