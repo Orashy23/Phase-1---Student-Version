@@ -105,7 +105,8 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_XOR3] = "..\\Images\\Menu\\Menu_XOR3.jpg"; 
 	MenuItemImages[ITM_INV] = "..\\Images\\Menu\\Menu_INV.jpg";
 	MenuItemImages[ITM_BUFF] = "..\\Images\\Menu\\Menu_BUFF.jpg";
-
+	MenuItemImages[ITM_SWITCH] = "..\\Images\\Menu\\Menu_Switch.jpg";
+	MenuItemImages[ITM_LED] = "..\\Images\\Menu\\Menu_LED.jpg";
 
 	//TODO: Prepare image for each menu item and add it to the list
 
