@@ -288,35 +288,34 @@ void Output::DrawSWITCH(GraphicsInfo r_GfxInfo, bool selected) const
 
 void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 {
-	int x1 = r_GfxInfo.x1;
-	int y1 = r_GfxInfo.y1;
-	int x2 = r_GfxInfo.x2;
-	int y2 = r_GfxInfo.y2;
-	
-	if(x1==x2 || y1==y2) //straight line
-		pWind->DrawLine(x1, y1, x2, y2);
-	else //with a bend
-	{
-		int midx = (x1 + x2) / 2;
+	// Set pen color based on selection
+	if (selected)
+		pWind->SetPen(UI.SelectColor, 3);
+	else
+		pWind->SetPen(UI.ConnColor, 3);
 
-		//first segment
-		pWind->DrawLine(x1, y1, midx, y1);
-		//second segment
-		pWind->DrawLine(midx, y1, midx, y2);
-		//third segment
-		pWind->DrawLine(midx, y2, x2, y2);
-	}
-	
-	//pWind->DrawLine(x1, y1, x2, y2)//gharbawy : not sure exactly what to here "flag";
-	
-	//TODO: Add code to draw connection
+	// Draw an L-shaped connection
+	// This simple logic handles straight horizontal, straight vertical, and broken lines
+
+	// 1. Draw vertical segment from (x1, y1) to (x1, y2)
+	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x1, r_GfxInfo.y2);
+
+	// 2. Draw horizontal segment from (x1, y2) to (x2, y2)
+	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y2, r_GfxInfo.x2, r_GfxInfo.y2);
 }
-// omda ba2oloko hasa3dko fel draw connection
+void Output::DrawString(int x, int y, string msg) const
+{
+	pWind->SetPen(UI.MsgColor);
+	pWind->SetFont(20, BOLD, BY_NAME, "Arial");
+	pWind->DrawString(x, y, msg);
+}
+
+
 Output::~Output()
 {
 	delete pWind;
 }
 
-
+// omda ba2oloko check keda el draw connection mazbota wala eh
 
 //mariam
