@@ -37,7 +37,7 @@ public:
 	void DrawINV(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawBUFF(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawSWITCH(GraphicsInfo r_GfxInfo, bool selected=false) const;
-
+    void DrawLED(GraphicsInfo r_GfxInfo, bool selected=false) const;
 
 
 	// Draws Connection
