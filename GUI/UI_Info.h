@@ -31,6 +31,28 @@ struct UI_Info	//User Interface Info.
 	//For now, we will assume that rect width = 50 and height = 50
 	static const int	AND2_Width = 50,		//AND2 Gate Image default width
 						AND2_Height = 50;		//AND2 Gate Image default height
+	static const int	OR2_Width = 50,		//OR2 Gate Image default width
+		OR2_Height = 50;		//OR2 Gate Image default height
+	static const int	XOR2_Width = 50,		//XOR2 Gate Image default width
+		XOR2_Height = 50;		//XOR2 Gate Image default height
+	static const int	XNOR2_Width = 50,		//XNOR2 Gate Image default width
+		XNOR2_Height = 50;		//XNOR2 Gate Image default height
+	static const int	AND3_Width = 50,		//AND3 Gate Image default width
+		AND3_Height = 50;		//AND3 Gate Image default height
+	static const int	NOR3_Width = 50,		//NOR3 Gate Image default width
+		NOR3_Height = 50;		//NOR3 Gate Image default height
+	static const int	XOR3_Width = 50,		//XOR3 Gate Image default width
+		XOR3_Height = 50;		//XOR3 Gate Image default height
+	static const int    INV_Width = 50,        //INV Gate Image default width
+		INV_Height = 50;       //INV Gate Image default height
+	static const int    BUFF_Width = 50,       //BUFF Gate Image default width
+		BUFF_Height = 50;      //BUFF Gate Image default height
+	static const int    NAND2_Width = 50,      //NAND2 Gate Image default width
+		NAND2_Height = 50;     //NAND2 Gate Image default height
+	static const int    NOR2_Width = 50,       //NOR2 Gate Image default width
+		NOR2_Height = 50;      //NOR2 Gate Image default height
+
+
 	
 }UI;	//create a single global object UI
 

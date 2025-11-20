@@ -1,5 +1,8 @@
-//#include "Input.h"
+#include "Input.h"
 #include "Output.h"
+//#include<iostream>
+//using namespace std;
+
 
 Input::Input(window* pW)
 {
@@ -11,17 +14,47 @@ void Input::GetPointClicked(int &x, int &y)
 	pWind->WaitMouseClick(x, y);	//Wait for mouse click
 }
 
-
-string Input::GetSrting(Output *pOut)
+string Input::GetString(Output *pOut)
 {
+	string input;
+	char ckey = 0;
+	pOut->PrintMsg("Enter your string: (Press ENTER to end, ESCAPE to end without saving)");
+	while(1)
+	{
+		pWind->WaitKeyPress(ckey);
+		if(ckey == 27) //ESCAPE key
+		{
+			
+			input = "";
+			break;
+		}
+		else if(ckey == 13) //ENTER key
+		{
+			break;
+		}
+		else if(ckey == 8) //BACKSPACE key
+		{
+			if(!input.empty())
+			{
+				input.pop_back();
+			}
+		}
+		else if(ckey >= 32 && ckey <= 126) //Printable characters
+		{
+			input.push_back(ckey);
+		}
+		pOut->PrintMsg("Enter your string: " + input);
+	}
+	pOut->PrintMsg(input + " is saved.");
 	///TODO: Implement this Function
 	//Read a complete string from the user until the user presses "ENTER".
 	//If the user presses "ESCAPE". This function should return an empty string.
 	//"BACKSPACE" should be also supported
 	//User should see what he is typing at the status bar
 
-	return NULL;
+	return input;
 }
+//Gharbawy
 
 //This function reads the position where the user clicks to determine the desired action
 //TODO
@@ -45,12 +78,23 @@ ActionType Input::GetUserAction() const
 			switch (ClickedItemOrder)
 			{
 			case ITM_AND2: return ADD_AND_GATE_2;
-			case ITM_OR2: return ADD_OR_GATE_2;
-			case ITM_EXIT: return EXIT;	
-			
+			case ITM_OR2:  return ADD_OR_GATE_2;
+			case ITM_NAND2:return ADD_NAND_GATE_2;
+			case ITM_NOR2: return ADD_NOR_GATE_2;
+			case ITM_XOR2: return ADD_XOR_GATE_2;
+			case ITM_XNOR2:return ADD_XNOR_GATE_2;
+			case ITM_AND3: return ADD_AND_GATE_3;
+			case ITM_NOR3: return ADD_NOR_GATE_3;
+			case ITM_XOR3: return ADD_XOR_GATE_3;
+			case ITM_EXIT: return EXIT;
+			case ITM_INV:  return ADD_INV;
+			case ITM_BUFF: return ADD_BUFF;
+			case ITM_DSN_CNT: return ADD_CONNECTION;
+
 			default: return DSN_TOOL;	//A click on empty place in desgin toolbar
 			}
 		}
+	
 	
 		//[2] User clicks on the drawing area
 		if ( y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
@@ -68,7 +112,16 @@ ActionType Input::GetUserAction() const
 
 }
 
+//Orashy
+
 
 Input::~Input()
 {
 }
+
+//oo
+
+
+
+
+//mari
