@@ -311,8 +311,7 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 	
 	//TODO: Add code to draw connection
 }
-
-
+// omda ba2oloko hasa3dko fel draw connection
 Output::~Output()
 {
 	delete pWind;
