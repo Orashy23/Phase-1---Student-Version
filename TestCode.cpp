@@ -238,13 +238,15 @@ int main()
 		switch (ActType)
 		{
 		case ADD_BUFF:
-				pOut->PrintMsg("Action: add a buffer gate , Click anywhere");
-				pIn->GetPointClicked(x, y);
-				GraphicsInfo GfxInfo;
-				GfxInfo.x1 = x;
-				GfxInfo.y1 = y;
-				pOut->ChangeTitle("Buffer Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
-				pOut->DrawBUFF(GfxInfo,false);
+		{
+			pOut->PrintMsg("Action: add a buffer gate , Click anywhere");
+			pIn->GetPointClicked(x , y);
+			GraphicsInfo GfxInfo = {};
+			GfxInfo.x1 = x;
+			GfxInfo.y1 = y;
+			pOut->ChangeTitle("Buffer Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
+			pOut->DrawBUFF(GfxInfo, false);
+		}
 				break;
 
 		case ADD_INV:

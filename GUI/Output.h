@@ -37,11 +37,13 @@ public:
 	void DrawINV(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawBUFF(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawSWITCH(GraphicsInfo r_GfxInfo, bool selected=false) const;
-    void DrawLED(GraphicsInfo r_GfxInfo, bool selected=false) const;
+   // void DrawLED(GraphicsInfo r_GfxInfo, bool selected=false) const;
 
 
 	// Draws Connection
 	void DrawConnection(GraphicsInfo r_GfxInfo, bool selected = false) const;
+
+	void DrawString(int x, int y, string msg) const;
 	
 	void PrintMsg(string msg) const;	//Print a message on Status bar
 

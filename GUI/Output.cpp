@@ -105,8 +105,11 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_XOR3] = "..\\Images\\Menu\\Menu_XOR3.jpg"; 
 	MenuItemImages[ITM_INV] = "..\\Images\\Menu\\Menu_INV.jpg";
 	MenuItemImages[ITM_BUFF] = "..\\Images\\Menu\\Menu_BUFF.jpg";
-	MenuItemImages[ITM_SWITCH] = "..\\Images\\Menu\\Menu_Switch.jpg";
-	MenuItemImages[ITM_LED] = "..\\Images\\Menu\\Menu_LED.jpg";
+	//MenuItemImages[ITM_SWITCH] = "..\\Images\\Menu\\Menu_Switch.jpg";
+	//MenuItemImages[ITM_LED] = "..\\Images\\Menu\\Menu_LED.jpg"; //recheck 3a4an fi errors
+	/*MenuItemImages[ITM_CONNECTION] = "..\\Images\\Menu\\Menu_Connection.jpg";
+	MenuItemImages[ITM_SIM_MODE] = "..\\Images\\Menu\\Menu_Simulation.jpg";
+	MenuItemImages[ITM_DSN_MODE] = "..\\Images\\Menu\\Menu_Design.jpg";*/
 
 	//TODO: Prepare image for each menu item and add it to the list
 
@@ -282,27 +285,31 @@ void Output::DrawSWITCH(GraphicsInfo r_GfxInfo, bool selected) const
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
 }
 
+//void Output::DrawLED(GraphicsInfo r_GfxInfo, bool selected) const
+//{
+//}
+
 
 
 //TODO: Add similar functions to draw all components  
 
-void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
-{
-	// Set pen color based on selection
-	if (selected)
-		pWind->SetPen(UI.SelectColor, 3);
-	else
-		pWind->SetPen(UI.ConnColor, 3);
-
-	// Draw an L-shaped connection
-	// This simple logic handles straight horizontal, straight vertical, and broken lines
-
-	// 1. Draw vertical segment from (x1, y1) to (x1, y2)
-	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x1, r_GfxInfo.y2);
-
-	// 2. Draw horizontal segment from (x1, y2) to (x2, y2)
-	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y2, r_GfxInfo.x2, r_GfxInfo.y2);
-}
+//void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
+//{
+//	// Set pen color based on selection
+//	if (selected)
+//		pWind->SetPen(UI.SelectColor, 3);
+//	else
+//		pWind->SetPen(UI.ConnColor, 3);
+//
+//	// Draw an L-shaped connection
+//	// This simple logic handles straight horizontal, straight vertical, and broken lines
+//
+//	// 1. Draw vertical segment from (x1, y1) to (x1, y2)
+//	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x1, r_GfxInfo.y2);
+//
+//	// 2. Draw horizontal segment from (x1, y2) to (x2, y2)
+//	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y2, r_GfxInfo.x2, r_GfxInfo.y2);
+//}
 void Output::DrawString(int x, int y, string msg) const
 {
 	pWind->SetPen(UI.MsgColor);
