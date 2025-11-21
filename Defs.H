@@ -77,7 +77,7 @@ enum DsgnMenuItem //The items of the design menu (you should add more items)
 	ITM_NOR3,
 	ITM_INV,
 	ITM_BUFF,
-	//ITM_SWITCH,
+	ITM_SWITCH,
 	//ITM_LED,
 	//ITM_CONNECTION, //KAN FI ERRORS LAMA KAN MAWGOD
 	//ITM_SIM_MODE,	
