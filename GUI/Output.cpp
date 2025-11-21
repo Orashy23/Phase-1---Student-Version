@@ -105,7 +105,7 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_XOR3] = "..\\Images\\Menu\\Menu_XOR3.jpg"; 
 	MenuItemImages[ITM_INV] = "..\\Images\\Menu\\Menu_INV.jpg";
 	MenuItemImages[ITM_BUFF] = "..\\Images\\Menu\\Menu_BUFF.jpg";
-	MenuItemImages[ITM_SWITCH] = "..\\Images\\Menu\\Menu_Switch.jpg"; // error because the file extension I fixed it
+	MenuItemImages[ITM_SWITCH] = "..\\Images\\Menu\\Menu_SWITCH.jpg"; // error because the file extension I fixed it
 	//MenuItemImages[ITM_LED] = "..\\Images\\Menu\\Menu_LED.jpg"; //recheck 3a4an fi errors
 	/*MenuItemImages[ITM_CONNECTION] = "..\\Images\\Menu\\Menu_Connection.jpg";
 	MenuItemImages[ITM_SIM_MODE] = "..\\Images\\Menu\\Menu_Simulation.jpg";
