@@ -147,7 +147,10 @@ void Output::DrawAND2(GraphicsInfo r_GfxInfo, bool selected) const
 		GateImage = "..\\Images\\Gates\\Gate_AND2.jpg";
 
 	// Draw AND2 gate at the top-left corner specified in r_GfxInfo
+
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.AND2_Width, UI.AND2_Height);
+	
+
 }
 
 void Output::DrawOR2(GraphicsInfo r_GfxInfo, bool selected) const
