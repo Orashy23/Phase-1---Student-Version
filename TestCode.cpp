@@ -353,7 +353,7 @@ int main()
 			GfxInfo.x1 = x;
 			GfxInfo.y1 = y;
 			pOut->ChangeTitle("3 input AND Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
-			pOut->DrawXNOR2(GfxInfo, false);
+			pOut->DrawAND3(GfxInfo, false);
 
 		}
 		break;
