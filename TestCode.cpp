@@ -3,6 +3,16 @@
 
 //This is a test code to test the Input and Output classes
 
+void prntlocation(int& x, int &y, Output * pOut, Input* pIn)
+{
+	while (x < 15 || x > 1300 || y < 80 || y > 600) // to prevent adding gate outside drawing area
+	{
+	
+		pOut->PrintMsg("Invalid location, please click inside the drawing area");
+		pIn->GetPointClicked(x, y);
+	}
+}
+
 int main()
 {
 	int x, y;
@@ -11,6 +21,7 @@ int main()
 	Output* pOut = new Output();;
 	Input* pIn = pOut->CreateInput();
 
+	
 	//Starting the test
 	pOut->PrintMsg("This demo is to test input and output classes, Click anywhere to start the test");
 	pIn->GetPointClicked(x, y);	//Wait for any click
@@ -229,12 +240,11 @@ int main()
 
 	///TODO:  You must add a case for each action
 	//Add cases for the missing actions below
+	
 	do
 	{
 		ActType = pIn->GetUserAction();
-
-
-
+		
 		switch (ActType)
 		{
 		case ADD_BUFF:
@@ -242,6 +252,7 @@ int main()
 			pOut->PrintMsg("Action: add a buffer gate , Click anywhere");
 			pIn->GetPointClicked(x, y);
 			GraphicsInfo GfxInfo = {};
+			prntlocation(x, y, pOut, pIn);
 			GfxInfo.x1 = x;
 			GfxInfo.y1 = y;
 			pOut->ChangeTitle("Buffer Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
@@ -255,6 +266,7 @@ int main()
 			pOut->PrintMsg("Action: add an inverter gate , Click anywhere");
 			pIn->GetPointClicked(x, y);
 			GraphicsInfo GfxInfo = {};
+			prntlocation(x, y, pOut, pIn);
 			GfxInfo.x1 = x;
 			GfxInfo.y1 = y;
 			pOut->ChangeTitle("Inverter Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
@@ -269,6 +281,7 @@ int main()
 			pOut->PrintMsg("Action: add 2-input AND gate , Click anywhere");
 			pIn->GetPointClicked(x, y);
 			GraphicsInfo GfxInfo = {};
+			prntlocation(x, y, pOut, pIn);
 			GfxInfo.x1 = x;
 			GfxInfo.y1 = y;
 			pOut->ChangeTitle("2 input AND Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
@@ -283,6 +296,7 @@ int main()
 			pOut->PrintMsg("Action: add 2-input NAND gate , Click anywhere");
 			pIn->GetPointClicked(x, y);
 			GraphicsInfo GfxInfo = {};
+			prntlocation(x, y, pOut, pIn);
 			GfxInfo.x1 = x;
 			GfxInfo.y1 = y;
 			pOut->ChangeTitle("2 input NAND Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
@@ -297,6 +311,7 @@ int main()
 			pOut->PrintMsg("Action: add 2-input OR gate , Click anywhere");
 			pIn->GetPointClicked(x, y);
 			GraphicsInfo GfxInfo = {};
+			prntlocation(x, y, pOut, pIn);
 			GfxInfo.x1 = x;
 			GfxInfo.y1 = y;
 			pOut->ChangeTitle("2 input OR Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
@@ -310,6 +325,7 @@ int main()
 			pOut->PrintMsg("Action: add 2-input NOR gate , Click anywhere");
 			pIn->GetPointClicked(x, y);
 			GraphicsInfo GfxInfo = {};
+			prntlocation(x, y, pOut, pIn);
 			GfxInfo.x1 = x;
 			GfxInfo.y1 = y;
 			pOut->ChangeTitle("2 input NAND Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
@@ -323,6 +339,7 @@ int main()
 			pOut->PrintMsg("Action: add 2-input XOR gate , Click anywhere");
 			pIn->GetPointClicked(x, y);
 			GraphicsInfo GfxInfo = {};
+			prntlocation(x, y, pOut, pIn);
 			GfxInfo.x1 = x;
 			GfxInfo.y1 = y;
 			pOut->ChangeTitle("2 input XOR Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
@@ -335,6 +352,7 @@ int main()
 			pOut->PrintMsg("Action: add 2-input XNOR gate , Click anywhere");
 			pIn->GetPointClicked(x, y);
 			GraphicsInfo GfxInfo = {};
+			prntlocation(x, y, pOut, pIn);
 			GfxInfo.x1 = x;
 			GfxInfo.y1 = y;
 			pOut->ChangeTitle("2 input XNOR Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
@@ -350,6 +368,7 @@ int main()
 			pOut->PrintMsg("Action: add 2-input XNOR gate , Click anywhere");
 			pIn->GetPointClicked(x, y);
 			GraphicsInfo GfxInfo = {};
+			prntlocation(x, y, pOut, pIn);
 			GfxInfo.x1 = x;
 			GfxInfo.y1 = y;
 			pOut->ChangeTitle("3 input AND Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
@@ -362,6 +381,7 @@ int main()
 			pOut->PrintMsg("Action: add 2-input XNOR gate , Click anywhere");
 			pIn->GetPointClicked(x, y);
 			GraphicsInfo GfxInfo = {};
+			prntlocation(x, y, pOut, pIn);
 			GfxInfo.x1 = x;
 			GfxInfo.y1 = y;
 			pOut->ChangeTitle("3 input XOR Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
@@ -375,6 +395,7 @@ int main()
 			pOut->PrintMsg("Action: add 2-input XNOR gate , Click anywhere");
 			pIn->GetPointClicked(x, y);
 			GraphicsInfo GfxInfo = {};
+			prntlocation(x, y, pOut, pIn);
 			GfxInfo.x1 = x;
 			GfxInfo.y1 = y;
 			pOut->ChangeTitle("3 input NOR Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
@@ -391,6 +412,7 @@ int main()
 			pOut->PrintMsg("Action: add switch , Click anywhere");
 			pIn->GetPointClicked(x, y);
 			GraphicsInfo GfxInfo = {};
+			prntlocation(x, y, pOut, pIn);
 			GfxInfo.x1 = x;
 			GfxInfo.y1 = y;
 			pOut->ChangeTitle("Switch Added at (" + to_string(x) + "," + to_string(y) + ")");
@@ -459,13 +481,17 @@ int main()
 
 
 		/// Exiting
-		pOut->PrintMsg("Action: EXIT, test is finished, click anywhere to exit");
-		pIn->GetPointClicked(x, y);
+		pOut->PrintMsg("Action: EXIT, test is finished");
+		
 
+		
 
 		delete pIn;
 		delete pOut;
+
 		return 0;
 	}
+	
+	
 
-
+	
