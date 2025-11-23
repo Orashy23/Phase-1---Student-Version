@@ -28,8 +28,8 @@ enum ActionType
 	ACT_PASTE,       // Paste items from clipboard
 	ACT_EDIT_LABEL,  // Edit text/label of selected item
 	ACT_CUT,         // Cut selected items to clipboard
-	// ACT_SIM_MODE,   // Switch to simulation mode
-	// ACT_DESIGN_MODE, // Switch to design mode
+	ACT_SIM_MODE,    // Switch to simulation mode
+	ACT_DESIGN_MODE, // Switch to design mode
 
 	ADD_LABEL,			//Add Label to a Component, a Connection
 	EDIT_LABEL,			//Edit Label of a Component, a Connection
@@ -130,7 +130,23 @@ enum LeftToolbarItem {
     LEFT_PASTE,
     LEFT_EDIT,
     LEFT_CUT,
+    LEFT_SIM_MODE,
+    LEFT_DSN_MODE,
     LEFT_TOOLBAR_CNT
+};
+
+// Mapping LeftToolbarItem to ActionType
+const ActionType LeftToolbarActions[LEFT_TOOLBAR_CNT] = {
+    ACT_SAVE,         // LEFT_SAVE
+    ACT_REDO,         // LEFT_REDO
+    ACT_UNDO,         // LEFT_UNDO
+    ACT_DELETE,       // LEFT_DELETE
+    ACT_COPY,         // LEFT_COPY
+    ACT_PASTE,        // LEFT_PASTE
+    ACT_EDIT_LABEL,   // LEFT_EDIT
+    ACT_CUT,          // LEFT_CUT
+    ACT_SIM_MODE,     // LEFT_SIM_MODE
+    ACT_DESIGN_MODE   // LEFT_DSN_MODE
 };
 
 #endif
