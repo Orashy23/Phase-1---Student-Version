@@ -8,15 +8,15 @@ using namespace std;
 //User Interface information file.
 //This file contains info that is needed by Input and Output classes to
 //handle the user interface
-const int x = 50;
-const int y = 50;
+const int x = 70;
+const int y = 70;
 __declspec(selectany) //This line to prevent "redefinition error"
 
 struct UI_Info	//User Interface Info.
 {
 	MODE AppMode;		//Application Mode (design or simulation)
 	
-	static const int	width = 1000, height = 750,	//Window width and height
+	static const int	width = 1900, height = 680,	//Window width and height
 						wx = 15 , wy = 15,			//Window starting coordinates
 						StatusBarHeight = 50,	//Status Bar Height
 						ToolBarHeight = 80,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
