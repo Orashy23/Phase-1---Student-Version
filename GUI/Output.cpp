@@ -1,5 +1,17 @@
 #include "Output.h"
 
+// Definition of the left toolbar actions mapping
+const ActionType LeftToolbarActions[LEFT_TOOLBAR_CNT] = {
+    SAVE,        // LEFT_SAVE
+    REDO,        // LEFT_REDO
+    UNDO,        // LEFT_UNDO
+    DEL,         // LEFT_DELETE
+    COPY,        // LEFT_COPY
+    PASTE,       // LEFT_PASTE
+    EDIT_LABEL,  // LEFT_EDIT
+    CUT          // LEFT_CUT
+};
+
 Output::Output()
 {
 	//Initialize user interface parameters
