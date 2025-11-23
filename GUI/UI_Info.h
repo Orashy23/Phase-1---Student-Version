@@ -17,17 +17,21 @@ struct UI_Info	//User Interface Info.
 	MODE AppMode;		//Application Mode (design or simulation)
 	
 	static const int	width = 1900, height = 655,	//Window width and height
+
 						wx = 15 , wy = 15,			//Window starting coordinates
 						StatusBarHeight = 50,	//Status Bar Height
 						ToolBarHeight = 80,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
 						ToolItemWidth = 80;		//Width of each item in toolbar menu
+static const int LeftToolBarWidth = 80;
+static const int LeftButtonHeight = 60;
 
 	color DrawColor;		//Drawing color
 	color SelectColor;		//Highlighting color
 	color ConnColor;		//Connector color
 	color MsgColor;			//Messages color
 	color BkGrndColor;		//Back ground color
-
+color ToolBarBackgroundColor;
+color ToolBarBorderColor;
 	
 	//This should be calculated accurately because it will be used later to create connections between gates
 	//For now, we will assume that rect width = 50 and height = 50
