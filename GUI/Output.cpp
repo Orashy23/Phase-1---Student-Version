@@ -296,23 +296,30 @@ void Output::DrawSWITCH(GraphicsInfo r_GfxInfo, bool selected) const
 
 //TODO: Add similar functions to draw all components  
 
-//void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
+//void Output::drawconnection(GraphicsInfo r_GfxInfo, bool selected) const
 //{
-//	// Set pen color based on selection
+//	
+//	// set pen color based on selection
 //	if (selected)
-//		pWind->SetPen(UI.SelectColor, 3);
+//		pwind->setpen(UI.selectcolor, 3);
 //	else
-//		pWind->SetPen(UI.ConnColor, 3);
+//		pwind->setpen(UI.conncolor, 3);
 //
-//	// Draw an L-shaped connection
-//	// This simple logic handles straight horizontal, straight vertical, and broken lines
+//	// draw an l-shaped connection
+//	// this simple logic handles straight horizontal, straight vertical, and broken lines
 //
-//	// 1. Draw vertical segment from (x1, y1) to (x1, y2)
-//	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x1, r_GfxInfo.y2);
+//	if (r_gfxinfo.x1 == r_gfxinfo.x2 || r_gfxinfo.y1 == r_gfxinfo.y2) {
+//		pwind->DrawLine(r_gfxinfo.x1, r_gfxinfo.y1, r_gfxinfo.x2, r_gfxinfo.y2);
+//	}
 //
-//	// 2. Draw horizontal segment from (x1, y2) to (x2, y2)
-//	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y2, r_GfxInfo.x2, r_GfxInfo.y2);
+//	int midx = (r_gfxinfo.x1 + r_gfxinfo.x2) / 2;
+//	pWind->DrawLine(r_gfxinfo.x1, r_gfxinfo.y1, midx, r_gfxinfo.y1);
+//	pWind->DrawLine(midx, r_gfxinfo.y1, midx, r_gfxinfo.y2);
+//	pWind->DrawLine(midx, r_gfxinfo.y2, r_gfxinfo.x2, r_gfxinfo.y2)
+//
 //}
+
+
 void Output::DrawString(int x, int y, string msg) const
 {
 	pWind->SetPen(UI.MsgColor);

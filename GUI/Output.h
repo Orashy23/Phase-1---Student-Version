@@ -41,7 +41,7 @@ public:
 
 
 	// Draws Connection
-	void DrawConnection(GraphicsInfo r_GfxInfo, bool selected = false) const;
+	void drawconnection(GraphicsInfo r_GfxInfo, bool selected = false) const;
 
 	void DrawString(int x, int y, string msg) const;
 	
