@@ -169,22 +169,16 @@ void Output::CreateLeftToolBar() const
     pWind->DrawLine(buttonWidth, UI.ToolBarHeight, buttonWidth, UI.height - UI.StatusBarHeight);
 }
 
-// Detect which left toolbar button was clicked 
+//The function essentially maps screen coordinates to specific toolbar functions.
 ActionType Output::GetLeftToolbarAction(int x, int y) const 
 {
-    int buttonWidth  = UI.LeftToolBarWidth; 
-    int buttonHeight = UI.LeftButtonHeight; 
-    int startY = UI.ToolBarHeight;
-
-    // Check if click is inside the left toolbar
-    if (x < buttonWidth && y > startY && y < UI.height - UI.StatusBarHeight)
+    if (x < UI.LeftToolBarWidth && y > UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
     {
-        int index = (y - startY) / buttonHeight;
+        int index = (y - UI.ToolBarHeight) / UI.LeftButtonHeight;
         if (index >= 0 && index < LEFT_TOOLBAR_CNT)
             return LeftToolbarActions[index];
     }
-
-    return STATUS_BAR; // default if outside toolbar
+    return STATUS_BAR;
 }
 
 
