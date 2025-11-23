@@ -141,19 +141,15 @@ void Output::CreateLeftToolBar() const
     pWind->SetPen(UI.ToolBarBorderColor, 2);
     pWind->DrawRectangle(x, y, x + buttonWidth, UI.height - UI.StatusBarHeight);
 
-    string LeftToolImages[LEFT_TOOLBAR_CNT] =
-    {
-        "..\\Toolbar\\Toolbar_Save.jpg",
-        "..\\Toolbar\\Toolbar_Redo.jpg",
-        "..\\Toolbar\\Toolbar_Undo.jpg",
-        "..\\Toolbar\\Toolbar_Delete.jpg",
-        "..\\Toolbar\\Toolbar_Copy.jpg",
-        "..\\Toolbar\\Toolbar_Paste.jpg",
-        "..\\Toolbar\\Toolbar_Edit.jpg",
-        "..\\Toolbar\\Toolbar_Cut.jpg"
-	// "..\\Toolbar\\Toolbar_Sim mode.jpg"
-	// "..\\Toolbar\\Toolbar_design mode.jpg"       // ha7ot badal el 2 comments el 2 modes bas lesa mesh delwkaty
-    };
+  string LeftToolbarImages[LEFT_TOOLBAR_CNT];
+
+LeftToolbarImages[LEFT_SAVE]  = "..\\Images\\LeftToolbar\\Save.jpg";
+LeftToolbarImages[LEFT_REDO]  = "..\\Images\\LeftToolbar\\Redo.jpg";
+LeftToolbarImages[LEFT_UNDO]  = "..\\Images\\LeftToolbar\\Undo.jpg";
+LeftToolbarImages[LEFT_DELETE] = "..\\Images\\LeftToolbar\\Delete.jpg";
+LeftToolbarImages[LEFT_COPY]  = "..\\Images\\LeftToolbar\\Copy.jpg";
+LeftToolbarImages[LEFT_PASTE] = "..\\Images\\LeftToolbar\\Paste.jpg";
+LeftToolbarImages[LEFT_CUT]   = "..\\Images\\LeftToolbar\\Cut.jpg";
 
     // Draw buttons
     for (int i = 0; i < LEFT_TOOLBAR_CNT; i++)
