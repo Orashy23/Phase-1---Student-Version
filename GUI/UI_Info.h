@@ -53,7 +53,8 @@ struct UI_Info	//User Interface Info.
 		NAND2_Height = y;     //NAND2 Gate Image default height
 	static const int    NOR2_Width = x,       //NOR2 Gate Image default width
 		NOR2_Height = y;      //NOR2 Gate Image default height
-
+	static const int LED_Width = x,        
+		LED_Height = y;       
 
 	
 }UI;	//create a single global object UI

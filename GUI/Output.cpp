@@ -189,6 +189,16 @@ void Output::DrawXNOR2(GraphicsInfo r_GfxInfo, bool selected) const
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.XNOR2_Width, UI.XNOR2_Height);
 }
 
+
+void Output::DrawLED(GraphicsInfo r_GfxInfo, bool selected) const
+{
+	string GateImage = "..\\Images\\Gates\\LED.jpg";  
+
+	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.LED_Width, UI.LED_Height);
+}
+
+
+
 void Output::DrawNAND2(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	string GateImage;
@@ -288,9 +298,7 @@ void Output::DrawSWITCH(GraphicsInfo r_GfxInfo, bool selected) const
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
 }
 
-//void Output::DrawLED(GraphicsInfo r_GfxInfo, bool selected) const
-//{
-//}
+
 
 
 

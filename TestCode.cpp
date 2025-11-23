@@ -404,6 +404,20 @@ int main()
 		}
 		break;
 
+		case ADD_LED:
+		{
+			pOut->PrintMsg("Action: add LED gate , Click anywhere");
+			pIn->GetPointClicked(x, y);
+			GraphicsInfo GfxInfo = {};
+			prntlocation(x, y, pOut, pIn);
+			GfxInfo.x1 = x;
+			GfxInfo.y1 = y;
+			pOut->ChangeTitle("LED Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
+			pOut->DrawLED(GfxInfo, false);
+
+		}
+		break;
+
 
 
 
