@@ -21,18 +21,6 @@ enum ActionType
 	ADD_LED,			//Add LED
 	ADD_CONNECTION,		//Add Wire Connection
 
-// Mapping LeftToolbarItem to ActionType
-const ActionType LeftToolbarActions[LEFT_TOOLBAR_CNT] = {
-    SAVE,        // LEFT_SAVE
-    REDO,        // LEFT_REDO
-    UNDO,        // LEFT_UNDO
-    DEL,         // LEFT_DELETE
-    COPY,        // LEFT_COPY
-    PASTE,       // LEFT_PASTE
-    CUT          // LEFT_CUT
-};
-
-
 	ADD_LABEL,			//Add Label to a Component, a Connection
 	EDIT_LABEL,			//Edit Label of a Component, a Connection
 
