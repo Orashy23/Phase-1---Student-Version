@@ -154,7 +154,7 @@ LeftToolbarImages[LEFT_EDIT]   = "..\\Toolbar\\Toolbar_Edit.jpg";
     // Draw buttons
     for (int i = 0; i < LEFT_TOOLBAR_CNT; i++)
     {
-        pWind->DrawImage(LeftToolImages[i], x, y + i * buttonHeight, buttonWidth, buttonHeight);
+       pWind->DrawImage(LeftToolbarImages[i], x, y + i * buttonHeight, buttonWidth, buttonHeight);
         pWind->SetPen(BLACK, 2);
         pWind->DrawRectangle(x, y + i * buttonHeight, x + buttonWidth, y + (i + 1) * buttonHeight); 
     }
