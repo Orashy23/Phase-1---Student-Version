@@ -47,6 +47,34 @@ enum ActionType
 	DSN_TOOL,	//A click on an empty place in the design tool bar
 };
 
+
+// =======================
+// Left vertical toolbar items
+// =======================
+enum LeftToolbarItem {
+    LEFT_SAVE = 0,
+    LEFT_REDO,
+    LEFT_UNDO,
+    LEFT_DELETE,
+    LEFT_COPY,
+    LEFT_PASTE,
+    LEFT_CUT,
+    LEFT_TOOLBAR_CNT
+};
+
+// Mapping LeftToolbarItem → ActionType
+const ActionType LeftToolbarActions[LEFT_TOOLBAR_CNT] = {
+    SAVE,   // LEFT_SAVE
+    REDO,   // LEFT_REDO
+    UNDO,   // LEFT_UNDO
+    DEL,    // LEFT_DELETE
+    COPY,   // LEFT_COPY
+    PASTE,  // LEFT_PASTE
+    CUT     // LEFT_CUT
+};
+
+
+
 //Possible Status for the pin
 enum STATUS
 {
