@@ -63,6 +63,13 @@ ActionType Input::GetUserAction() const
 	int x,y;
 	pWind->WaitMouseClick(x, y);	//Get the coordinates of the user click
 
+//  Left toolbar click check
+    if (x < UI.LeftToolBarWidth && y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
+    {
+    
+        return LEFT_TOOLBAR_CLICKED; 
+    }
+
 	if(UI.AppMode == DESIGN )	//application is in design mode
 	{
 		//[1] If user clicks on the Toolbar
