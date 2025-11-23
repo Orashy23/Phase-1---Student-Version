@@ -28,8 +28,8 @@ enum ActionType
 	ACT_PASTE,       // Paste items from clipboard
 	ACT_EDIT_LABEL,  // Edit text/label of selected item
 	ACT_CUT,         // Cut selected items to clipboard
-	ACT_SIM_MODE,    // Switch to simulation mode
-	ACT_DESIGN_MODE, // Switch to design mode
+	//ACT_SIM_MODE,    // Switch to simulation mode
+	//ACT_DESIGN_MODE, // Switch to design mode
 
 	ADD_LABEL,			//Add Label to a Component, a Connection
 	EDIT_LABEL,			//Edit Label of a Component, a Connection
