@@ -20,6 +20,17 @@ enum ActionType
 	ADD_SWITCH,			//Add Switch
 	ADD_LED,			//Add LED
 	ADD_CONNECTION,		//Add Wire Connection
+	ACT_SAVE,        // Save the current project/file
+ACT_REDO,        // Redo the last undone action
+ACT_UNDO,        // Undo the last action
+ACT_DELETE,      // Delete selected items
+ACT_COPY,        // Copy selected items to clipboard
+ACT_PASTE,       // Paste items from clipboard
+ACT_EDIT_LABEL,  // Edit text/label of selected item
+ACT_CUT,         // Cut selected items to clipboard
+// ACT_SIM_MODE,   // Switch to simulation mode
+// ACT_DESIGN_MODE, // Switch to design mode
+
 
 	ADD_LABEL,			//Add Label to a Component, a Connection
 	EDIT_LABEL,			//Edit Label of a Component, a Connection
