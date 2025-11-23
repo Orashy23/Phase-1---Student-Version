@@ -476,17 +476,14 @@ int main()
 			pOut->PrintMsg("Action: Add Connection - Click on the START point");
 			int x1, y1, x2, y2;
 
-			// Get first point
 			pIn->GetPointClicked(x1, y1);
 			prntlocation(x1, y1, pOut, pIn);
 
 			pOut->PrintMsg("Action: Add Connection - Now click on the END point");
 
-			// Get second point
 			pIn->GetPointClicked(x2, y2);
 			prntlocation(x2, y2, pOut, pIn);
 
-			// Now draw the connection between the two points
 			GraphicsInfo GfxInfo = {};
 			GfxInfo.x1 = x1;
 			GfxInfo.y1 = y1;
