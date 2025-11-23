@@ -38,7 +38,6 @@ public:
 	void DrawINV(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawBUFF(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawSWITCH(GraphicsInfo r_GfxInfo, bool selected=false) const;
-   // void DrawLED(GraphicsInfo r_GfxInfo, bool selected=false) const;
 
 
 	// Draws Connection
@@ -48,6 +47,24 @@ public:
 	
 	void PrintMsg(string msg) const;	//Print a message on Status bar
 
-void CreateLeftToolBar() const;  // Draw the vertical left toolbar
+	void CreateLeftToolBar() const;  // Draw the vertical left toolbar
+
+	// ============================
+	// Left toolbar click detection
+	// ============================
+	enum LeftToolbarItem {
+		LEFT_SAVE = 0,
+		LEFT_REDO,
+		LEFT_UNDO,
+		LEFT_DELETE,
+		LEFT_COPY,
+		LEFT_PASTE,
+		LEFT_EDIT,
+		LEFT_CUT,
+		LEFT_TOOLBAR_CNT
+	};
+
+	LeftToolbarItem GetLeftToolBarItem(int x, int y) const;
+
 	~Output();
 };
