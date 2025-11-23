@@ -1,4 +1,4 @@
- #ifndef CONST_H
+#ifndef CONST_H
 #define CONST_H
 
 //This header file contains some definitions to be used all over the application
@@ -51,7 +51,6 @@ enum ActionType
 	DSN_TOOL,	//A click on an empty place in the design tool bar
 };
 
-
 // =======================
 // Left vertical toolbar items
 // =======================
@@ -62,24 +61,14 @@ enum LeftToolbarItem {
     LEFT_DELETE,
     LEFT_COPY,
     LEFT_PASTE,
-    LEFT_EDIT, // yarab
+    LEFT_EDIT,
     LEFT_CUT,
     LEFT_TOOLBAR_CNT
 };
 
 // Mapping LeftToolbarItem → ActionType
-const ActionType LeftToolbarActions[LEFT_TOOLBAR_CNT] = {
-    SAVE,   // LEFT_SAVE
-    REDO,   // LEFT_REDO
-    UNDO,   // LEFT_UNDO
-    DEL,    // LEFT_DELETE
-    COPY,   // LEFT_COPY
-    PASTE,  // LEFT_PASTE
-	EDIT_LABEL,  // LEFT_EDIT
-    CUT     // LEFT_CUT
-};
-
-
+// Declaration only - definition should be in ONE .cpp file
+extern const ActionType LeftToolbarActions[LEFT_TOOLBAR_CNT];
 
 //Possible Status for the pin
 enum STATUS
@@ -94,7 +83,7 @@ enum MODE	//Modes of operation
 	SIMULATION
 };
 
-enum DsgnMenuItem //The items of the design menu (you should add more items)
+enum DsgnMenuItem //The items of the design menu
 {
 	ITM_AND2,		
 	ITM_OR2,		
@@ -110,8 +99,6 @@ enum DsgnMenuItem //The items of the design menu (you should add more items)
 	ITM_SWITCH,
 	ITM_CONNECTION,
 	ITM_LED,
-	//ITM_SIM_MODE,	
-	//ITM_DSN_MODE,
 	ITM_EXIT,
 	ITM_DSN_CNT		//no. of design menu items ==> This should be the last line in this enum
 };
@@ -133,13 +120,11 @@ enum FANOUT
 };
 
 // A structure to contain drawing parameters for each component
-//Each component occupies a rectangluar area so it needs 2 points to represent that area
-//this structure can be extended if desired
+// Each component occupies a rectangular area so it needs 2 points to represent that area
+// This structure can be extended if desired
 struct GraphicsInfo
 {
-	int x1,y1, x2, y2;
+	int x1, y1, x2, y2;
 };
 
-#ifndef NULL
-#define NULL 0
-#endif
+#endif // CONST_H
