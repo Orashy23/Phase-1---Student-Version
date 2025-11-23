@@ -24,7 +24,7 @@ Output::Output()
 	CreateDesignToolBar();	//Create the desgin toolbar
 	CreateStatusBar();		//Create Status bar
 	CreateLeftToolBar();    // Create the left tool bar
-// yarab teshta8al ha run //bismillah 
+// akher test enharda 
 }
 
 Input* Output::CreateInput() const
