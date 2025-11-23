@@ -1,7 +1,7 @@
 #ifndef CONST_H
 #define CONST_H
 
-//This header file contains some defenitions to be used all over the application
+//This header file contains some definitions to be used all over the application
 
 //All possible actions
 enum ActionType 
@@ -21,16 +21,15 @@ enum ActionType
 	ADD_LED,			//Add LED
 	ADD_CONNECTION,		//Add Wire Connection
 	ACT_SAVE,        // Save the current project/file
-ACT_REDO,        // Redo the last undone action
-ACT_UNDO,        // Undo the last action
-ACT_DELETE,      // Delete selected items
-ACT_COPY,        // Copy selected items to clipboard
-ACT_PASTE,       // Paste items from clipboard
-ACT_EDIT_LABEL,  // Edit text/label of selected item
-ACT_CUT,         // Cut selected items to clipboard
-// ACT_SIM_MODE,   // Switch to simulation mode
-// ACT_DESIGN_MODE, // Switch to design mode
-
+	ACT_REDO,        // Redo the last undone action
+	ACT_UNDO,        // Undo the last action
+	ACT_DELETE,      // Delete selected items
+	ACT_COPY,        // Copy selected items to clipboard
+	ACT_PASTE,       // Paste items from clipboard
+	ACT_EDIT_LABEL,  // Edit text/label of selected item
+	ACT_CUT,         // Cut selected items to clipboard
+	// ACT_SIM_MODE,   // Switch to simulation mode
+	// ACT_DESIGN_MODE, // Switch to design mode
 
 	ADD_LABEL,			//Add Label to a Component, a Connection
 	EDIT_LABEL,			//Edit Label of a Component, a Connection
@@ -46,17 +45,16 @@ ACT_CUT,         // Cut selected items to clipboard
 	SAVE,		//Save the whole Circuit to a file
 	LOAD,		//Load a Circuit from a file
 
-	UNDO,		//Undo the last Action preformed
+	UNDO,		//Undo the last Action performed
 	REDO,		//Redo the last Action canceled (BONUS)
 
 	DSN_MODE,	//Switch to Design mode
-	SIM_MODE,	//Switch to Simulatiom mode
+	SIM_MODE,	//Switch to Simulation mode
 
 	EXIT,		//Exit the application
 
 	STATUS_BAR,		//A click on the status bar
 	DSN_TOOL,	//A click on an empty place in the design tool bar
-
 };
 
 //Possible Status for the pin
@@ -66,19 +64,14 @@ enum STATUS
 	HIGH
 };
 
-enum  MODE	//Modes of operation
+enum MODE	//Modes of operation
 {
 	DESIGN,
 	SIMULATION
 };
 
-
 enum DsgnMenuItem //The items of the design menu (you should add more items)
 {
-	//Note: Items are ordered here as they appear in menu
-	//If you want to change the menu items order, change the order here
-	
-	
 	ITM_AND2,		
 	ITM_OR2,		
 	ITM_NAND2,
@@ -94,41 +87,28 @@ enum DsgnMenuItem //The items of the design menu (you should add more items)
 	ITM_CONNECTION,
 	ITM_LED,
 	//ITM_SIM_MODE,	
-	//ITM_DSN_MODE,	//lesa hangib images
+	//ITM_DSN_MODE,
 	ITM_EXIT,
-	
-	//Exit item
-	//TODO: Add more items names here
-	
 	ITM_DSN_CNT		//no. of design menu items ==> This should be the last line in this enum
-	
 };
 
-
-enum SimMenuItem //The items of the simulation menu (you should add more items)
+enum SimMenuItem //The items of the simulation menu
 {
-	//Note: Items are ordered here as they appear in menu
 	ITM_SIM,	//Simulate menu item
 	ITM_TRUTH,	//Truth table menu item
-	
-	//TODO:Add more items names here
-	
 	ITM_SIM_CNT		//no. of simulation menu items ==> This should be the last line in this enum
-	
 };
 
-//Maximum number of input pins that can be connected to any output pin
+// Maximum number of input pins that can be connected to any output pin
 #define MAX_CONNS 20
 
-//assume fan out is 5 for now it can be read from the user or can be predefined as const
+// Default fan out
 enum FANOUT
 {
-	AND2_FANOUT = 5	//Default fan out of 2-input AND gate
+	AND2_FANOUT = 5
 };
 
-//A structure to contain drawing parameters for each component
-//Each component occupies a rectangluar area so it needs 2 points to represent that area
-//this structure can be extended if desired
+// A structure to contain drawing parameters for each component
 struct GraphicsInfo
 {
 	int x1,y1, x2, y2;
@@ -137,5 +117,20 @@ struct GraphicsInfo
 #ifndef NULL
 #define NULL 0
 #endif
+
+// =======================
+// Left vertical toolbar items
+// =======================
+enum LeftToolbarItem {
+    LEFT_SAVE = 0,
+    LEFT_REDO,
+    LEFT_UNDO,
+    LEFT_DELETE,
+    LEFT_COPY,
+    LEFT_PASTE,
+    LEFT_EDIT,
+    LEFT_CUT,
+    LEFT_TOOLBAR_CNT
+};
 
 #endif
