@@ -23,6 +23,7 @@ Output::Output()
 
 	CreateDesignToolBar();	//Create the desgin toolbar
 	CreateStatusBar();		//Create Status bar
+	CreateLeftToolBar();    // Create the left tool bar
 
 }
 
@@ -79,12 +80,12 @@ void Output::ClearStatusBar()const
 	pWind->DrawRectangle(MsgX, UI.height - MsgY, UI.width, UI.height);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
-//Clears the drawing (degin) area
+//Clears the drawing (desgin) area
 void Output::ClearDrawingArea() const
 {
 	pWind->SetPen(RED, 1);
 	pWind->SetBrush(WHITE);
-	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight);
+	pWind->DrawRectangle(UI.LeftToolBarWidth, UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight); //start drawing after the left toolbar and top toolbar
 	
 }
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -127,6 +128,7 @@ void Output::CreateDesignToolBar() const
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);	
 
 }
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //Draws the menu (toolbar) in the simulation mode
 void Output::CreateSimulationToolBar() const
