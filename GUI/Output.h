@@ -6,7 +6,7 @@ class Output	//The application manager should have a pointer to this class
 {
 private:
 	window* pWind;	//Pointer to the Graphics Window
-static const ActionType LeftToolbarActions[LEFT_TOOLBAR_CNT]; //Array mapping left toolbar indices to ActionType
+	
 public:
 	Output(); // Performs the Window Initialization
 	Input* CreateInput() const; //creates a pointer to the Input object
@@ -32,7 +32,7 @@ public:
 	void DrawXOR2(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawOR2(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawXNOR2(GraphicsInfo r_GfxInfo, bool selected = false) const;
-	void DrawLED(GraphicsInfo r_GfxInfo, bool selected) const;
+	void DrawLED(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawAND3(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawNOR3(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawXOR3(GraphicsInfo r_GfxInfo, bool selected = false) const;
@@ -53,21 +53,10 @@ public:
 	// ============================
 	// Left toolbar click detection
 	// ============================
-	enum LeftToolbarItem {
-		LEFT_SAVE = 0,
-		LEFT_REDO,
-		LEFT_UNDO,
-		LEFT_DELETE,
-		LEFT_COPY,
-		LEFT_PASTE,
-		LEFT_EDIT,
-		LEFT_CUT,
-        // LEFT_SIM_MODE, 
-        // LEFT_DSN_MODE,
-		LEFT_TOOLBAR_CNT
-	};
-
-	    // Get action type corresponding to click on the left toolbar
+	// Note: LeftToolbarItem enum is now defined in Defs.H to avoid duplication
+	
+	// Get action type corresponding to click on the left toolbar
 	ActionType GetLeftToolbarAction(int x, int y) const; 
+	
 	~Output();
 };
