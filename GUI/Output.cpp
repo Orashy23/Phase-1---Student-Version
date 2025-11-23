@@ -105,11 +105,10 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_XOR3] = "..\\Images\\Menu\\Menu_XOR3.jpg"; 
 	MenuItemImages[ITM_INV] = "..\\Images\\Menu\\Menu_INV.jpg";
 	MenuItemImages[ITM_BUFF] = "..\\Images\\Menu\\Menu_BUFF.jpg";
-	MenuItemImages[ITM_SWITCH] = "..\\Images\\Menu\\Menu_SWITCH.jpg"; // error because the file extension I fixed it
+	MenuItemImages[ITM_SWITCH] = "..\\Images\\Menu\\Menu_SWITCH.jpg"; 
 	//MenuItemImages[ITM_LED] = "..\\Images\\Menu\\Menu_LED.jpg"; //recheck 3a4an fi errors
-	/*MenuItemImages[ITM_CONNECTION] = "..\\Images\\Menu\\Menu_Connection.jpg";
-	MenuItemImages[ITM_SIM_MODE] = "..\\Images\\Menu\\Menu_Simulation.jpg";
-	MenuItemImages[ITM_DSN_MODE] = "..\\Images\\Menu\\Menu_Design.jpg";*/
+	//MenuItemImages[ITM_SIM_MODE] = "..\\Images\\Menu\\Menu_Simulation.jpg";
+	//MenuItemImages[ITM_DSN_MODE] = "..\\Images\\Menu\\Menu_Design.jpg";*/
 
 	//TODO: Prepare image for each menu item and add it to the list
 
@@ -294,30 +293,33 @@ void Output::DrawSWITCH(GraphicsInfo r_GfxInfo, bool selected) const
 
 
 
-//TODO: Add similar functions to draw all components  
 
-//void Output::drawconnection(GraphicsInfo r_GfxInfo, bool selected) const
-//{
-//	
-//	// set pen color based on selection
-//	if (selected)
-//		pwind->setpen(UI.selectcolor, 3);
-//	else
-//		pwind->setpen(UI.conncolor, 3);
-//
-//	// draw an l-shaped connection
-//	// this simple logic handles straight horizontal, straight vertical, and broken lines
-//
-//	if (r_gfxinfo.x1 == r_gfxinfo.x2 || r_gfxinfo.y1 == r_gfxinfo.y2) {
-//		pwind->DrawLine(r_gfxinfo.x1, r_gfxinfo.y1, r_gfxinfo.x2, r_gfxinfo.y2);
-//	}
-//
-//	int midx = (r_gfxinfo.x1 + r_gfxinfo.x2) / 2;
-//	pWind->DrawLine(r_gfxinfo.x1, r_gfxinfo.y1, midx, r_gfxinfo.y1);
-//	pWind->DrawLine(midx, r_gfxinfo.y1, midx, r_gfxinfo.y2);
-//	pWind->DrawLine(midx, r_gfxinfo.y2, r_gfxinfo.x2, r_gfxinfo.y2)
-//
-//}
+void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
+{
+
+	// set pen color based on selection
+	if (selected)
+		pWind->SetPen(UI.SelectColor, 3);
+	else
+		pWind->SetPen(UI.ConnColor, 3);
+
+	// draw an l-shaped connection
+	// this simple logic handles straight horizontal, straight vertical, and broken lines
+
+	if (r_GfxInfo.x1 == r_GfxInfo.x2 || r_GfxInfo.y1 == r_GfxInfo.y2) {
+		pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);
+		return;
+	}
+
+	int midx = (r_GfxInfo.x1 + r_GfxInfo.x2) / 2;
+	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, midx, r_GfxInfo.y1);
+	pWind->DrawLine(midx, r_GfxInfo.y1, midx, r_GfxInfo.y2);
+	pWind->DrawLine(midx, r_GfxInfo.y2, r_GfxInfo.x2, r_GfxInfo.y2);
+
+}
+
+
+
 
 
 void Output::DrawString(int x, int y, string msg) const

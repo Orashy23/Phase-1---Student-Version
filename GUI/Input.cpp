@@ -89,7 +89,7 @@ ActionType Input::GetUserAction() const
 			case ITM_EXIT: return EXIT;
 			case ITM_INV:  return ADD_INV;
 			case ITM_BUFF: return ADD_BUFF;
-			case ITM_DSN_CNT: return ADD_CONNECTION;
+			case ITM_CONNECTION: return ADD_CONNECTION;
 
 			default: return DSN_TOOL;	//A click on empty place in desgin toolbar
 			}
