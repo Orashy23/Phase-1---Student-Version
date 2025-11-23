@@ -35,6 +35,10 @@ enum ActionType
 	SAVE,		//Save the whole Circuit to a file
 	LOAD,		//Load a Circuit from a file
 
+	COPY,  
+    PASTE,
+    CUT,
+
 	UNDO,		//Undo the last Action performed
 	REDO,		//Redo the last Action canceled (BONUS)
 
@@ -58,6 +62,7 @@ enum LeftToolbarItem {
     LEFT_DELETE,
     LEFT_COPY,
     LEFT_PASTE,
+    LEFT_EDIT, // yarab
     LEFT_CUT,
     LEFT_TOOLBAR_CNT
 };
