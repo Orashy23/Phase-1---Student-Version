@@ -62,8 +62,8 @@ public:
 		LEFT_PASTE,
 		LEFT_EDIT,
 		LEFT_CUT,
-        LEFT_SIM_MODE, 
-        LEFT_DSN_MODE,
+        // LEFT_SIM_MODE, 
+        // LEFT_DSN_MODE,
 		LEFT_TOOLBAR_CNT
 	};
 
