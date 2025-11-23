@@ -141,8 +141,7 @@ void Output::CreateLeftToolBar() const
     pWind->SetPen(UI.ToolBarBorderColor, 2);
     pWind->DrawRectangle(x, y, x + buttonWidth, UI.height - UI.StatusBarHeight);
 
-    // Images now come from a separate "Toolbar" folder
-    string LeftToolImages[] =
+    string LeftToolImages[LEFT_TOOLBAR_CNT] =
     {
         "..\\Toolbar\\Toolbar_Save.jpg",
         "..\\Toolbar\\Toolbar_Redo.jpg",
@@ -151,25 +150,20 @@ void Output::CreateLeftToolBar() const
         "..\\Toolbar\\Toolbar_Copy.jpg",
         "..\\Toolbar\\Toolbar_Paste.jpg",
         "..\\Toolbar\\Toolbar_Edit.jpg",
-        "..\\Toolbar\\Toolbar_Cut.jpg",
-        // "..\\Toolbar\\Toolbar_SimulationMode.jpg", //lesa hadawarlohom ala sowar
-        // "..\\Toolbar\\Toolbar_DesignMode.jpg"
+        "..\\Toolbar\\Toolbar_Cut.jpg"
+	// "..\\Toolbar\\Toolbar_Sim mode.jpg"
+	// "..\\Toolbar\\Toolbar_design mode.jpg"       // ha7ot badal el 2 comments el 2 modes bas lesa mesh delwkaty
     };
 
-    int numButtons = sizeof(LeftToolImages) / sizeof(LeftToolImages[0]);
-
     // Draw buttons
-    for (int i = 0; i < numButtons; i++)
+    for (int i = 0; i < LEFT_TOOLBAR_CNT; i++)
     {
         pWind->DrawImage(LeftToolImages[i], x, y + i * buttonHeight, buttonWidth, buttonHeight);
-
         pWind->SetPen(BLACK, 2);
-        pWind->DrawRectangle(x, 
-                             y + i * buttonHeight,
-                             x + buttonWidth,
-                             y + (i + 1) * buttonHeight);
+        pWind->DrawRectangle(x, y + i * buttonHeight, x + buttonWidth, y + (i + 1) * buttonHeight); 
     }
 
+	
     // Separator line
     pWind->SetPen(RED, 3);
     pWind->DrawLine(buttonWidth, UI.ToolBarHeight, buttonWidth, UI.height - UI.StatusBarHeight);
