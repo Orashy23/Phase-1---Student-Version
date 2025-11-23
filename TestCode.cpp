@@ -422,6 +422,20 @@ int main()
 		break;
 
 
+		/*case ADD_CONNECTION:
+		{
+			pOut->PrintMsg("Action: add switch , Click anywhere");
+			pIn->GetPointClicked(x, y);
+			GraphicsInfo GfxInfo = {};
+			prntlocation(x, y, pOut, pIn);
+			GfxInfo.x1 = x;
+			GfxInfo.y1 = y;
+			pOut->ChangeTitle("Connection Added at (" + to_string(x) + "," + to_string(y) + ")");
+			pOut->DrawConnection(GfxInfo, false);
+
+		}
+		break;*/
+
 
 
 
@@ -476,6 +490,36 @@ int main()
 		{
 			break;
 		}
+
+
+		default:
+		{
+			pOut->PrintMsg("Action: Add Connection - Click on the START point");
+			int x1, y1, x2, y2;
+
+			// Get first point
+			pIn->GetPointClicked(x1, y1);
+			prntlocation(x1, y1, pOut, pIn);
+
+			pOut->PrintMsg("Action: Add Connection - Now click on the END point");
+
+			// Get second point
+			pIn->GetPointClicked(x2, y2);
+			prntlocation(x2, y2, pOut, pIn);
+
+			// Now draw the connection between the two points
+			GraphicsInfo GfxInfo = {};
+			GfxInfo.x1 = x1;
+			GfxInfo.y1 = y1;
+			GfxInfo.x2 = x2;
+			GfxInfo.y2 = y2;
+
+			pOut->ChangeTitle("Connection Added from (" + to_string(x1) + "," + to_string(y1) +") to (" + to_string(x2) + "," + to_string(y2) + ")");
+			pOut->DrawConnection(GfxInfo, false);
+		}
+		break;
+
+
 		}
 		}while (ActType != EXIT); //mmken tet4al
 
