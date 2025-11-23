@@ -57,17 +57,19 @@ string Input::GetString(Output *pOut)
 //Gharbawy
 
 //This function reads the position where the user clicks to determine the desired action
-//TODO
 ActionType Input::GetUserAction() const
 {	
 	int x,y;
 	pWind->WaitMouseClick(x, y);	//Get the coordinates of the user click
 
-//  Left toolbar click check
+    // Left toolbar click check - fixed 
     if (x < UI.LeftToolBarWidth && y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
     {
-    
-        return LEFT_TOOLBAR_CLICKED; 
+        int itemIndex = (y - UI.ToolBarHeight) / UI.LeftButtonHeight; 
+        if (itemIndex >= 0 && itemIndex < LEFT_TOOLBAR_CNT)          
+            return LeftToolbarActions[itemIndex];                     
+        else                                                        
+            return STATUS_BAR;                                       
     }
 
 	if(UI.AppMode == DESIGN )	//application is in design mode
