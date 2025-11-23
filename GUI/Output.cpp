@@ -12,6 +12,10 @@ Output::Output()
 	UI.ConnColor = RED;
 	UI.MsgColor = BLUE;
 	UI.BkGrndColor = WHITE;
+
+	//Initilaize colors for the toolbar
+	 UI.ToolBarBackgroundColor = LIGHTGRAY;    
+    UI.ToolBarBorderColor = BLACK;
 	
 	//Create the drawing window
 	pWind = CreateWind(UI.width, UI.height, UI.wx, UI.wy);	
