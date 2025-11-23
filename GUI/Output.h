@@ -6,6 +6,7 @@ class Output	//The application manager should have a pointer to this class
 {
 private:
 	window* pWind;	//Pointer to the Graphics Window
+static const ActionType LeftToolbarActions[LEFT_TOOLBAR_CNT]; //Array mapping left toolbar indices to ActionType
 public:
 	Output(); // Performs the Window Initialization
 	Input* CreateInput() const; //creates a pointer to the Input object
@@ -61,10 +62,12 @@ public:
 		LEFT_PASTE,
 		LEFT_EDIT,
 		LEFT_CUT,
+        LEFT_SIM_MODE, 
+        LEFT_DSN_MODE,
 		LEFT_TOOLBAR_CNT
 	};
 
-	LeftToolbarItem GetLeftToolBarItem(int x, int y) const;
-
+	    // Get action type corresponding to click on the left toolbar
+	ActionType GetLeftToolbarAction(int x, int y) const; 
 	~Output();
 };
