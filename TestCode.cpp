@@ -421,27 +421,6 @@ int main()
 		}
 		break;
 
-
-	/*	case ADD_CONNECTION:
-		{
-			pOut->PrintMsg("Action: add switch , Click anywhere");
-			pIn->GetPointClicked(x, y);
-			GraphicsInfo GfxInfo = {};
-			GfxInfo.x1 = x;
-			GfxInfo.y1 = y;
-			pOut->ChangeTitle("Connection Added at (" + to_string(x) + "," + to_string(y) + ")");
-			pOut->DrawConnection(GfxInfo, false);
-
-		}
-		break;*/
-
-
-
-
-
-
-
-
 		case SELECT:
 		{
 			pOut->PrintMsg("Action: a click on the Drawing area, Click anywhere");
