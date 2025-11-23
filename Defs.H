@@ -21,17 +21,15 @@ enum ActionType
 	ADD_LED,			//Add LED
 	ADD_CONNECTION,		//Add Wire Connection
 
-	// Mapping LeftToolbarItem to ActionType
+// Mapping LeftToolbarItem to ActionType
 const ActionType LeftToolbarActions[LEFT_TOOLBAR_CNT] = {
-    ACT_SAVE,         // LEFT_SAVE
-    ACT_REDO,         // LEFT_REDO
-    ACT_UNDO,         // LEFT_UNDO
-    ACT_DELETE,       // LEFT_DELETE
-    ACT_COPY,         // LEFT_COPY
-    ACT_PASTE,        // LEFT_PASTE
-    ACT_EDIT_LABEL,   // LEFT_EDIT
-    ACT_CUT           // LEFT_CUT
-    // If you want, you can add: SIM_MODE, DSN_MODE here if you uncomment toolbar buttons
+    SAVE,        // LEFT_SAVE
+    REDO,        // LEFT_REDO
+    UNDO,        // LEFT_UNDO
+    DEL,         // LEFT_DELETE
+    COPY,        // LEFT_COPY
+    PASTE,       // LEFT_PASTE
+    CUT          // LEFT_CUT
 };
 
 
@@ -122,37 +120,4 @@ struct GraphicsInfo
 
 #ifndef NULL
 #define NULL 0
-#endif
-
-// =======================
-// Left vertical toolbar items
-// =======================
-enum LeftToolbarItem {
-    LEFT_SAVE = 0,
-    LEFT_REDO,
-    LEFT_UNDO,
-    LEFT_DELETE,
-    LEFT_COPY,
-    LEFT_PASTE,
-    LEFT_EDIT,
-    LEFT_CUT,
-    LEFT_SIM_MODE,
-    LEFT_DSN_MODE,
-    LEFT_TOOLBAR_CNT
-};
-
-// Mapping LeftToolbarItem to ActionType
-const ActionType LeftToolbarActions[LEFT_TOOLBAR_CNT] = {
-    ACT_SAVE,         // LEFT_SAVE
-    ACT_REDO,         // LEFT_REDO
-    ACT_UNDO,         // LEFT_UNDO
-    ACT_DELETE,       // LEFT_DELETE
-    ACT_COPY,         // LEFT_COPY
-    ACT_PASTE,        // LEFT_PASTE
-    ACT_EDIT_LABEL,   // LEFT_EDIT
-    ACT_CUT,          // LEFT_CUT
-    ACT_SIM_MODE,     // LEFT_SIM_MODE
-    ACT_DESIGN_MODE   // LEFT_DSN_MODE
-};
-
 #endif
