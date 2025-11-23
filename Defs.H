@@ -20,16 +20,20 @@ enum ActionType
 	ADD_SWITCH,			//Add Switch
 	ADD_LED,			//Add LED
 	ADD_CONNECTION,		//Add Wire Connection
-	ACT_SAVE,        // Save the current project/file
-	ACT_REDO,        // Redo the last undone action
-	ACT_UNDO,        // Undo the last action
-	ACT_DELETE,      // Delete selected items
-	ACT_COPY,        // Copy selected items to clipboard
-	ACT_PASTE,       // Paste items from clipboard
-	ACT_EDIT_LABEL,  // Edit text/label of selected item
-	ACT_CUT,         // Cut selected items to clipboard
-	//ACT_SIM_MODE,    // Switch to simulation mode
-	//ACT_DESIGN_MODE, // Switch to design mode
+
+	// Mapping LeftToolbarItem to ActionType
+const ActionType LeftToolbarActions[LEFT_TOOLBAR_CNT] = {
+    ACT_SAVE,         // LEFT_SAVE
+    ACT_REDO,         // LEFT_REDO
+    ACT_UNDO,         // LEFT_UNDO
+    ACT_DELETE,       // LEFT_DELETE
+    ACT_COPY,         // LEFT_COPY
+    ACT_PASTE,        // LEFT_PASTE
+    ACT_EDIT_LABEL,   // LEFT_EDIT
+    ACT_CUT           // LEFT_CUT
+    // If you want, you can add: SIM_MODE, DSN_MODE here if you uncomment toolbar buttons
+};
+
 
 	ADD_LABEL,			//Add Label to a Component, a Connection
 	EDIT_LABEL,			//Edit Label of a Component, a Connection
