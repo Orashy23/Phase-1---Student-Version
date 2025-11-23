@@ -105,10 +105,12 @@ enum SimMenuItem //The items of the simulation menu
 // Default fan out
 enum FANOUT
 {
-	AND2_FANOUT = 5
+	AND2_FANOUT = 5 //Default fan out of 2-input AND gate
 };
 
 // A structure to contain drawing parameters for each component
+//Each component occupies a rectangluar area so it needs 2 points to represent that area
+//this structure can be extended if desired
 struct GraphicsInfo
 {
 	int x1,y1, x2, y2;
