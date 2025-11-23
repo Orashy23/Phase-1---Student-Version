@@ -129,6 +129,60 @@ void Output::CreateDesignToolBar() const
 
 }
 
+void Output::CreateLeftToolBar() const 
+{
+    int x = 0;
+    int y = UI.ToolBarHeight;
+    int buttonWidth  = UI.LeftToolBarWidth;
+    int buttonHeight = UI.LeftButtonHeight;
+
+    // Background
+    pWind->SetBrush(UI.ToolBarBackgroundColor);
+    pWind->SetPen(UI.ToolBarBorderColor, 2);
+    pWind->DrawRectangle(x, y, x + buttonWidth, UI.height - UI.StatusBarHeight);
+
+    // Images now come from a separate "Toolbar" folder
+    string LeftToolImages[] =
+    {
+        "..\\Toolbar\\Toolbar_Save.jpg",
+        "..\\Toolbar\\Toolbar_Redo.jpg",
+        "..\\Toolbar\\Toolbar_Undo.jpg",
+        "..\\Toolbar\\Toolbar_Delete.jpg",
+        "..\\Toolbar\\Toolbar_Copy.jpg",
+        "..\\Toolbar\\Toolbar_Paste.jpg",
+        "..\\Toolbar\\Toolbar_Edit.jpg",
+        "..\\Toolbar\\Toolbar_Cut.jpg",
+        // "..\\Toolbar\\Toolbar_SimulationMode.jpg", //lesa hadawarlohom ala sowar
+        // "..\\Toolbar\\Toolbar_DesignMode.jpg"
+    };
+
+    int numButtons = sizeof(LeftToolImages) / sizeof(LeftToolImages[0]);
+
+    // Draw buttons
+    for (int i = 0; i < numButtons; i++)
+    {
+        pWind->DrawImage(LeftToolImages[i], x, y + i * buttonHeight, buttonWidth, buttonHeight);
+
+        pWind->SetPen(BLACK, 2);
+        pWind->DrawRectangle(x, 
+                             y + i * buttonHeight,
+                             x + buttonWidth,
+                             y + (i + 1) * buttonHeight);
+    }
+
+    // Separator line
+    pWind->SetPen(RED, 3);
+    pWind->DrawLine(buttonWidth, UI.ToolBarHeight, buttonWidth, UI.height - UI.StatusBarHeight);
+}
+
+
+
+
+
+
+
+
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //Draws the menu (toolbar) in the simulation mode
 void Output::CreateSimulationToolBar() const
