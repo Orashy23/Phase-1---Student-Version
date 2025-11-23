@@ -1,4 +1,4 @@
-#ifndef CONST_H
+ #ifndef CONST_H
 #define CONST_H
 
 //This header file contains some definitions to be used all over the application
@@ -75,6 +75,7 @@ const ActionType LeftToolbarActions[LEFT_TOOLBAR_CNT] = {
     DEL,    // LEFT_DELETE
     COPY,   // LEFT_COPY
     PASTE,  // LEFT_PASTE
+	EDIT_LABEL,  // LEFT_EDIT
     CUT     // LEFT_CUT
 };
 
