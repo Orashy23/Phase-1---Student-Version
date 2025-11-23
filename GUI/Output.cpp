@@ -143,14 +143,14 @@ void Output::CreateLeftToolBar() const
 
   string LeftToolbarImages[LEFT_TOOLBAR_CNT];
 
-LeftToolbarImages[LEFT_SAVE]  = "..\\Images\\LeftToolbar\\Save.jpg";
-LeftToolbarImages[LEFT_REDO]  = "..\\Images\\LeftToolbar\\Redo.jpg";
-LeftToolbarImages[LEFT_UNDO]  = "..\\Images\\LeftToolbar\\Undo.jpg";
-LeftToolbarImages[LEFT_DELETE] = "..\\Images\\LeftToolbar\\Delete.jpg";
-LeftToolbarImages[LEFT_COPY]  = "..\\Images\\LeftToolbar\\Copy.jpg";
-LeftToolbarImages[LEFT_PASTE] = "..\\Images\\LeftToolbar\\Paste.jpg";
-LeftToolbarImages[LEFT_CUT]   = "..\\Images\\LeftToolbar\\Cut.jpg";
-
+LeftToolbarImages[LEFT_SAVE]  = "..\\Toolbar\\Toolbar_Save.jpg";
+LeftToolbarImages[LEFT_REDO]  = "..\\Toolbar\\Toolbar_Redo.jpg";
+LeftToolbarImages[LEFT_UNDO]  = "..\\Toolbar\\Toolbar_Undo.jpg";
+LeftToolbarImages[LEFT_DELETE] = "..\\Toolbar\\Toolbar_Delete.jpg";
+LeftToolbarImages[LEFT_COPY]  = "..\\Toolbar\\Toolbar_Copy.jpg";
+LeftToolbarImages[LEFT_PASTE] = "..\\Toolbar\\Toolbar_Paste.jpg";
+LeftToolbarImages[LEFT_CUT]  = "..\\Toolbar\\Toolbar_Cut.jpg";
+LeftToolbarImages[LEFT_EDIT]   = "..\\Toolbar\\Toolbar_Edit.jpg";
     // Draw buttons
     for (int i = 0; i < LEFT_TOOLBAR_CNT; i++)
     {
