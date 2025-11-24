@@ -55,7 +55,7 @@ enum ActionType
 // Left vertical toolbar items
 // =======================
 enum LeftToolbarItem {
-    LEFT_SAVE = 0,
+    LEFT_SAVE ,
     LEFT_REDO,
     LEFT_UNDO,
     LEFT_DELETE,
