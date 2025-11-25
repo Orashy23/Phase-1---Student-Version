@@ -47,15 +47,6 @@ public:
 	void DrawString(int x, int y, string msg) const;
 	
 	void PrintMsg(string msg) const;	//Print a message on Status bar
-
-
-
-	// ============================
-	// Left toolbar click detection
-	// ============================
-	// Note: LeftToolbarItem enum is now defined in Defs.H to avoid duplication
-	
-	// Get action type corresponding to click on the left toolbar
 	
 	
 	~Output();
