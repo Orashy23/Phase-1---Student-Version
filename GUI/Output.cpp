@@ -25,8 +25,6 @@ Output::Output()
 	CreateDesignToolBar();	//Create the desgin toolbar
 	CreateStatusBar();		//Create Status bar
 	CreateBottomToolBar();
-	//CreateLeftToolBar();    // Create the left tool bar
-// akher test enharda 
 }
 
 Input* Output::CreateInput() const
