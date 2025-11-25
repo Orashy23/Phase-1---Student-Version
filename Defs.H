@@ -29,6 +29,7 @@ enum ActionType
 	CHANGE_SWITCH,		//Change Switch Status in Simulation Mode
 
 	SELECT,		//Select a Component, a Connection
+	UNSELECT,	//Unselect a Component, a Connection
 	DEL,		//Delete a Component, a Connection
 	MOVE,		//Move a Component, a Connection
 
@@ -119,7 +120,7 @@ enum SimMenuItem //The items of the simulation menu
 // Default fan out
 enum FANOUT
 {
-	AND2_FANOUT = 5 //Default fan out of 2-input AND gate
+	AND2_FANOUT = 50 //Default fan out of 2-input AND gate
 };
 
 // A structure to contain drawing parameters for each component

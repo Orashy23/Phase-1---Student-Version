@@ -171,7 +171,7 @@ void Output::CreateSimulationToolBar() const
 	UI.AppMode = SIMULATION;	//Simulation Mode
 
 	//TODO: Write code to draw the simualtion toolbar (similar to that of design toolbar drawing)
-
+	
 
 }
 
@@ -375,7 +375,7 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 void Output::DrawString(int x, int y, string msg) const
 {
 	pWind->SetPen(UI.MsgColor);
-	pWind->SetFont(20, BOLD, BY_NAME, "Arial");
+	pWind->SetFont(50, BOLD, BY_NAME, "Arial");
 	pWind->DrawString(x, y, msg);
 }
 
@@ -385,6 +385,4 @@ Output::~Output()
 	delete pWind;
 }
 
-// omda ba2oloko check keda el draw connection mazbota wala eh
 
-//mariam

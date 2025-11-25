@@ -226,6 +226,10 @@ int main()
 
 	///TODO: Add code here to 
 	// 1- Read a string from the user on the status bar and print it inside the drawing area
+	pOut->PrintMsg("Please enter a string");
+	string s = pIn->GetString(pOut);
+	pOut->ClearStatusBar();
+	pOut->DrawString(400, 200, s);
 
 
 	pIn->GetPointClicked(x, y);	//Wait for any click
@@ -316,7 +320,7 @@ int main()
 			GfxInfo.y1 = y;
 			pOut->ChangeTitle("2 input OR Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
 			pOut->DrawOR2(GfxInfo, false);
-
+			
 		}
 		break;
 
