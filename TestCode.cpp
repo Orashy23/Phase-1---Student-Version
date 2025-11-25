@@ -5,7 +5,7 @@
 
 void prntlocation(int& x, int &y, Output * pOut, Input* pIn)
 {
-	while (x < 15 || x > 1300 || y < 80 || y > 600) // to prevent adding gate outside drawing area
+	while (x < 80 || x > 1800 || y < 80 || y > 600) // to prevent adding gate outside drawing area
 	{
 	
 		pOut->PrintMsg("Invalid location, please click inside the drawing area");
