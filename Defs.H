@@ -51,26 +51,15 @@ enum ActionType
 	DSN_TOOL,	//A click on an empty place in the design tool bar
 };
 
-// =======================
-// Left vertical toolbar items
-// =======================
-enum LeftToolbarItem {
-    LEFT_SAVE ,
-    LEFT_REDO,
-    LEFT_UNDO,
-    LEFT_DELETE,
-    LEFT_COPY,
-    LEFT_PASTE,
-    LEFT_EDIT,
-    LEFT_CUT,
-    LEFT_TOOLBAR_CNT
-};
+
 
 // Mapping LeftToolbarItem → ActionType
 // Declaration only - definition should be in ONE .cpp file
-extern const ActionType LeftToolbarActions[LEFT_TOOLBAR_CNT];
+//extern const ActionType LeftToolbarActions[LEFT_TOOLBAR_CNT];
 
 //Possible Status for the pin
+
+
 enum STATUS
 {
 	LOW,
@@ -103,12 +92,26 @@ enum DsgnMenuItem //The items of the design menu
 	ITM_DSN_CNT		//no. of design menu items ==> This should be the last line in this enum
 };
 
+enum BottomMenuItem
+{
+	ITM_UNDO_B,
+	ITM_REDO_B,
+	ITM_SAVE_B,
+	ITM_EDIT_B,
+	ITM_delete_B,
+	ITM_copy_B,
+	ITM_paste_B,
+	ITM_cut_B,
+	ITM_BTM_CNT
+};
+
 enum SimMenuItem //The items of the simulation menu
 {
 	ITM_SIM,	//Simulate menu item
 	ITM_TRUTH,	//Truth table menu item
 	ITM_SIM_CNT		//no. of simulation menu items ==> This should be the last line in this enum
 };
+
 
 // Maximum number of input pins that can be connected to any output pin
 #define MAX_CONNS 20

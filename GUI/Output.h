@@ -15,7 +15,7 @@ public:
 	void CreateDesignToolBar() const;	//Tool bar of the design mode
 	void CreateSimulationToolBar() const;//Tool bar of the simulation mode
 	void CreateStatusBar() const;	//Create Status bar
-
+	void CreateBottomToolBar() const;
 	void ClearStatusBar() const;		//Clears the status bar
 	void ClearDrawingArea() const;	//Clears the drawing area
 
@@ -48,7 +48,7 @@ public:
 	
 	void PrintMsg(string msg) const;	//Print a message on Status bar
 
-	void CreateLeftToolBar() const;  // Draw the vertical left toolbar
+
 
 	// ============================
 	// Left toolbar click detection
@@ -56,7 +56,7 @@ public:
 	// Note: LeftToolbarItem enum is now defined in Defs.H to avoid duplication
 	
 	// Get action type corresponding to click on the left toolbar
-	ActionType GetLeftToolbarAction(int x, int y) const; 
+	
 	
 	~Output();
 };

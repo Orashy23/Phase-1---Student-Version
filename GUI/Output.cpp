@@ -1,16 +1,6 @@
 #include "Output.h"
 
-// Definition of the left toolbar actions mapping
-const ActionType LeftToolbarActions[LEFT_TOOLBAR_CNT] = {
-    SAVE,        // LEFT_SAVE
-    REDO,        // LEFT_REDO
-    UNDO,        // LEFT_UNDO
-    DEL,         // LEFT_DELETE
-    COPY,        // LEFT_COPY
-    PASTE,       // LEFT_PASTE
-    EDIT_LABEL,  // LEFT_EDIT
-    CUT          // LEFT_CUT
-};
+
 
 Output::Output()
 {
@@ -26,8 +16,7 @@ Output::Output()
 	UI.BkGrndColor = WHITE;
 
 	//Initilaize colors for the toolbar
-	 UI.ToolBarBackgroundColor = LIGHTGRAY;    
-    UI.ToolBarBorderColor = BLACK;
+	
 	
 	//Create the drawing window
 	pWind = CreateWind(UI.width, UI.height, UI.wx, UI.wy);	
@@ -35,7 +24,8 @@ Output::Output()
 
 	CreateDesignToolBar();	//Create the desgin toolbar
 	CreateStatusBar();		//Create Status bar
-	CreateLeftToolBar();    // Create the left tool bar
+	CreateBottomToolBar();
+	//CreateLeftToolBar();    // Create the left tool bar
 // akher test enharda 
 }
 
@@ -141,53 +131,34 @@ void Output::CreateDesignToolBar() const
 
 }
 
-void Output::CreateLeftToolBar() const 
+void Output::CreateBottomToolBar() const
 {
-    int x = 0;
-    int y = UI.ToolBarHeight;
-    int buttonWidth  = UI.LeftToolBarWidth;
-    int buttonHeight = UI.LeftButtonHeight;
+	// prepare list of images
+	string BottomItemImages[ITM_BTM_CNT];
 
-    // Background
-    pWind->SetBrush(UI.ToolBarBackgroundColor);
-    pWind->SetPen(UI.ToolBarBorderColor, 2);
-    pWind->DrawRectangle(x, y, x + buttonWidth, UI.height - UI.StatusBarHeight);
+	BottomItemImages[ITM_UNDO_B] = "..\\Images\\Menu\\Undo.jpg";
+	BottomItemImages[ITM_REDO_B] ="..\\Images\\Menu\\Redo.jpg";
+	BottomItemImages[ITM_SAVE_B] = "..\\Images\\Menu\\Save.jpg";
+	BottomItemImages[ITM_EDIT_B] = "..\\Images\\Menu\\Edit.jpg";
+	BottomItemImages[ITM_delete_B] ="..\\Images\\Menu\\delete.jpg";
+	BottomItemImages[ITM_paste_B] = "..\\Images\\Menu\\Paste.jpg";
+	BottomItemImages[ITM_copy_B] = "..\\Images\\Menu\\Copy.jpg";
+	BottomItemImages[ITM_cut_B] = "..\\Images\\Menu\\cut.jpg";
 
-  string LeftToolbarImages[LEFT_TOOLBAR_CNT];
 
-LeftToolbarImages[LEFT_SAVE]  = "..\\Toolbar\\Toolbar_Save.jpg";
-LeftToolbarImages[LEFT_REDO]  = "..\\Toolbar\\Toolbar_Redo.jpg";
-LeftToolbarImages[LEFT_UNDO]  = "..\\Toolbar\\Toolbar_Undo.jpg";
-LeftToolbarImages[LEFT_DELETE] = "..\\Toolbar\\Toolbar_Delete.jpg";
-LeftToolbarImages[LEFT_COPY]  = "..\\Toolbar\\Toolbar_Copy.jpg";
-LeftToolbarImages[LEFT_PASTE] = "..\\Toolbar\\Toolbar_Paste.jpg";
-LeftToolbarImages[LEFT_CUT]  = "..\\Toolbar\\Toolbar_Cut.jpg";
-LeftToolbarImages[LEFT_EDIT]   = "..\\Toolbar\\Toolbar_Edit.jpg";
-    // Draw buttons
-    for (int i = 0; i < LEFT_TOOLBAR_CNT; i++)
-    {
-       pWind->DrawImage(LeftToolbarImages[i], x, y + i * buttonHeight, buttonWidth, buttonHeight);
-        pWind->SetPen(BLACK, 2);
-        pWind->DrawRectangle(x, y + i * buttonHeight, x + buttonWidth, y + (i + 1) * buttonHeight); 
-    }
+	int y = UI.height - UI.StatusBarHeight - UI.ToolBarHeight;
 
-	
-    // Separator line
-    pWind->SetPen(RED, 3);
-    pWind->DrawLine(buttonWidth, UI.ToolBarHeight, buttonWidth, UI.height - UI.StatusBarHeight);
+
+	for (int i = 0; i < ITM_BTM_CNT; i++)
+		pWind->DrawImage(BottomItemImages[i], i * UI.ToolItemWidth, y,
+			UI.ToolItemWidth, UI.ToolBarHeight);
+
+
+	pWind->SetPen(RED, 3);
+	pWind->DrawLine(0, y, UI.width, y);
 }
 
 //The function essentially maps screen coordinates to specific toolbar functions.
-ActionType Output::GetLeftToolbarAction(int x, int y) const 
-{
-    if (x < UI.LeftToolBarWidth && y > UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
-    {
-        int index = (y - UI.ToolBarHeight) / UI.LeftButtonHeight;
-        if (index >= 0 && index < LEFT_TOOLBAR_CNT)
-            return LeftToolbarActions[index];
-    }
-    return STATUS_BAR;
-}
 
 
 
