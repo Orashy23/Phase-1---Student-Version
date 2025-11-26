@@ -55,15 +55,6 @@ enum ActionType
 	SIMULATE,
 };
 
-
-
-// Mapping LeftToolbarItem → ActionType
-// Declaration only - definition should be in ONE .cpp file
-//extern const ActionType LeftToolbarActions[LEFT_TOOLBAR_CNT];
-
-//Possible Status for the pin
-
-
 enum STATUS
 {
 	LOW,
@@ -121,7 +112,6 @@ enum SimMenuItem //The items of the simulation menu
 	ITM_SIM_CNT //no. of simulation menu items ==> This should be the last line in this enum
 };
 
-
 // Maximum number of input pins that can be connected to any output pin
 #define MAX_CONNS 20
 
@@ -131,7 +121,6 @@ enum FANOUT
 	AND2_FANOUT = 50 //Default fan out of 2-input AND gate
 };
 
-// A structure to contain drawing parameters for each component
 // Each component occupies a rectangular area so it needs 2 points to represent that area
 // This structure can be extended if desired
 struct GraphicsInfo
@@ -139,4 +128,4 @@ struct GraphicsInfo
 	int x1, y1, x2, y2;
 };
 
-#endif // CONST_H
+#endif

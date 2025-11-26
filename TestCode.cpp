@@ -26,21 +26,13 @@ int main()
 	pOut->PrintMsg("This demo is to test input and output classes, Click anywhere to start the test");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-
-	///////////////////////////////////////////////////////////////////////////////////
 	// TEST 1:	Create The FULL Tool bar, the drawing area and the status bar	
-	//			This has already been done through the constrcutor of class Output
-	///////////////////////////////////////////////////////////////////////////////////
 
 	pOut->PrintMsg("TEST1: Drawing Tool bar and Status bar, Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-
-	///////////////////////////////////////////////////////////////////////////////////
 	// TEST 2:	Drawing all the Components with all possible states: Normal, highlighted
-	//			
-	///////////////////////////////////////////////////////////////////////////////////
-
+	
 	pOut->PrintMsg("TEST2: Now we will show that Output class can draw any Component in any state, Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
@@ -87,8 +79,6 @@ int main()
 	GfxInfo.x1 = 100;	GfxInfo.y1 = 200;
 	pOut->DrawOR2(GfxInfo, true);
 
-
-
 	GfxInfo.x1 = 300;	GfxInfo.y1 = 100;
 	pOut->DrawNOR2(GfxInfo);
 
@@ -98,9 +88,6 @@ int main()
 
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->ClearDrawingArea();
-
-
-
 
 
 	/// 2.4- XOR2 and XNOR2 Gates test
@@ -117,7 +104,6 @@ int main()
 
 	GfxInfo.x1 = 300;	GfxInfo.y1 = 100;
 	pOut->DrawXNOR2(GfxInfo);
-
 
 	//Drawing Highlighted XNOR2 gate
 	GfxInfo.x1 = 300;	GfxInfo.y1 = 200;
@@ -145,7 +131,6 @@ int main()
 	//Drawing Highlighted INV gate
 	GfxInfo.x1 = 300;	GfxInfo.y1 = 200;
 	pOut->DrawINV(GfxInfo, true);
-
 
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->ClearDrawingArea();
@@ -202,23 +187,15 @@ int main()
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->ClearDrawingArea();
 
-
 	/// 2.8- Connections
 	pOut->PrintMsg("Drawing connections, Normal, Highlighted, straight, and broken,  Click to continue");
-
 	///TODO: Add code to draw connections, Normal, Highlighted, straight, and broken (all combinations) 
 
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->ClearDrawingArea();
 
-
-
-
-
-
-	///////////////////////////////////////////////////////////////////////////////////
 	// TEST 3: Read strings from the user
-	///////////////////////////////////////////////////////////////////////////////////
+	
 	pOut->PrintMsg("TEST3: Now Time to test class Input, Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
@@ -234,17 +211,14 @@ int main()
 
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	//pOut->ClearDrawingArea();
-
-	///////////////////////////////////////////////////////////////////////////////////
+	
 	// TEST 4: Check for the user action
-	///////////////////////////////////////////////////////////////////////////////////
 	pOut->PrintMsg("TEST4: Testing Input ability to detect User Action, click anywhere");
 
 	ActionType ActType;
 
 	///TODO:  You must add a case for each action
-	//Add cases for the missing actions below
-
+	//Add cases for the missing actions below	
 	do
 	{
 		ActType = pIn->GetUserAction();
@@ -252,7 +226,7 @@ int main()
 		switch (ActType)
 		{
 		case ADD_BUFF:
-		{
+		{			
 			pOut->PrintMsg("Action: add a buffer gate , Click anywhere");
 			pIn->GetPointClicked(x, y);
 			GraphicsInfo GfxInfo = {};
@@ -291,7 +265,6 @@ int main()
 			pOut->ChangeTitle("2 input AND Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
 			pOut->DrawAND2(GfxInfo, false);
 
-
 		}
 		break;
 
@@ -305,7 +278,6 @@ int main()
 			GfxInfo.y1 = y;
 			pOut->ChangeTitle("2 input NAND Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
 			pOut->DrawNAND2(GfxInfo, false);
-
 
 		}
 
@@ -365,8 +337,6 @@ int main()
 		}
 		break;
 
-
-
 		case ADD_AND_GATE_3:
 		{
 			pOut->PrintMsg("Action: add 2-input XNOR gate , Click anywhere");
@@ -422,9 +392,6 @@ int main()
 		}
 		break;
 
-
-
-
 		case ADD_SWITCH:
 		{
 			pOut->PrintMsg("Action: add switch , Click anywhere");
@@ -450,7 +417,6 @@ int main()
 		case STATUS_BAR:
 		{
 			pOut->PrintMsg("Action: a click on the Status Bar, Click anywhere");
-
 
 			break;
 		}
@@ -528,9 +494,8 @@ int main()
 			break;
 		}
 
-
-		case ADD_CONNECTION:
-
+		case ADD_CONNECTION: 
+		
 		{
 			pOut->PrintMsg("Action: Add Connection - Click on the START point");
 			int x1, y1, x2, y2;
@@ -591,13 +556,11 @@ int main()
 
 		/// Exiting
 		pOut->PrintMsg("Action: EXIT, test is finished");
-
-
-
-
+		
 		delete pIn;
 		delete pOut;
 
 		return 0;
+	}
 	
-}
+	

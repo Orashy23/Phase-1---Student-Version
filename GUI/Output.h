@@ -15,18 +15,16 @@ public:
 	void CreateDesignToolBar() const;	//Tool bar of the design mode
 	void CreateSimulationToolBar() const;//Tool bar of the simulation mode
 	void CreateStatusBar() const;	//Create Status bar
-	void CreateBottomToolBar() const;
+	void CreateBottomToolBar() const; // Create Bottom ToolBar
 	void ClearStatusBar() const;		//Clears the status bar
 	void ClearDrawingArea() const;	//Clears the drawing area
 
 	window* CreateWind(int wd, int h, int x, int y) const; //Creates user interface window
-
 	
-	// Draws 2-input AND gate
+    // Draws 2-input AND gate
 	void DrawAND2(GraphicsInfo r_GfxInfo, bool selected = false) const;
 
 	///TODO : Make similar functions for drawing all other gates, switch, and LED, .. etc
-
 	void DrawNAND2(GraphicsInfo r_GfxInfo, bool selected=false) const;
 	void DrawNOR2(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawXOR2(GraphicsInfo r_GfxInfo, bool selected = false) const;
@@ -40,14 +38,12 @@ public:
 	void DrawBUFF(GraphicsInfo r_GfxInfo, bool selected = false) const;
 	void DrawSWITCH(GraphicsInfo r_GfxInfo, bool selected=false) const;
 
-
 	// Draws Connection
 	void DrawConnection(GraphicsInfo r_GfxInfo, bool selected = false) const;
 
 	void DrawString(int x, int y, string msg) const;
 	
 	void PrintMsg(string msg) const;	//Print a message on Status bar
-	
-	
+		
 	~Output();
 };

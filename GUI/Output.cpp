@@ -1,85 +1,67 @@
 #include "Output.h"
 
-
-
 Output::Output()
 {
-	//Initialize user interface parameters
-
-	UI.AppMode = DESIGN;	//Design Mode is the startup mode
-
+	UI.AppMode = DESIGN;		
 	//Initilaize interface colors
 	UI.DrawColor = BLACK;
 	UI.SelectColor = BLUE;
 	UI.ConnColor = RED;
 	UI.MsgColor = DARKGREEN;
 	UI.BkGrndColor = WHITE;
-
-	//Initilaize colors for the toolbar
-	
-	
 	//Create the drawing window
 	pWind = CreateWind(UI.width, UI.height, UI.wx, UI.wy);	
 	ChangeTitle("Programming Techniques Project");
 
-	CreateDesignToolBar();	//Create the desgin toolbar
-	CreateStatusBar();		//Create Status bar
-	CreateBottomToolBar();
+	CreateDesignToolBar();	//Create desgin toolbar
+	CreateStatusBar();		//Create Statusbar
+	CreateBottomToolBar();  // Create bottom toolbar
 }
-
 Input* Output::CreateInput() const
 {
 	//Create an Input Object & assign it to the Same Window
 	Input* pIn = new Input(pWind);
 	return pIn;
 }
-
-
-//======================================================================================//
-//								Interface Functions										//
-//======================================================================================//
+//Interface Functions
 
 window* Output::CreateWind(int wd, int h, int x, int y) const
 {
 	return new window(wd, h, x, y);
 }
-//////////////////////////////////////////////////////////////////////////////////
+
 void Output::ChangeTitle(string Title) const
 {
 	pWind->ChangeTitle(Title);
 }
-//////////////////////////////////////////////////////////////////////////////////
+
 void Output::CreateStatusBar() const
 {
 	pWind->SetPen(BLACK,3);
 	pWind->DrawLine(0, UI.height-UI.StatusBarHeight, UI.width, UI.height-UI.StatusBarHeight);
 }
-//////////////////////////////////////////////////////////////////////////////////
+
 void Output::PrintMsg(string msg) const
 {
-	ClearStatusBar();	//Clear Status bar to print message on it
-	// Set the Message offset from the Status Bar
+	ClearStatusBar();
 	int MsgX = 25;
 	int MsgY = UI.StatusBarHeight - 10;
-
-	// Print the Message
+	
     pWind->SetFont(20, BOLD | ITALICIZED, BY_NAME, "Arial"); 
 	pWind->SetPen(UI.MsgColor); 
 	pWind->DrawString(MsgX, UI.height - MsgY, msg);
 }
-//////////////////////////////////////////////////////////////////////////////////
+
 void Output::ClearStatusBar()const
 {
-	// Set the Message offset from the Status Bar
 	int MsgX = 25;
 	int MsgY = UI.StatusBarHeight - 10;
 
-	//Overwrite using bachground color to erase the message
 	pWind->SetPen(UI.BkGrndColor);
 	pWind->SetBrush(UI.BkGrndColor);
 	pWind->DrawRectangle(MsgX, UI.height - MsgY, UI.width, UI.height);
 }
-//////////////////////////////////////////////////////////////////////////////////////////
+
 //Clears the drawing (desgin) area
 void Output::ClearDrawingArea() const
 {
@@ -88,15 +70,13 @@ void Output::ClearDrawingArea() const
 	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.width, UI.height -UI.ToolBarHeight- UI.StatusBarHeight); //start drawing after the left toolbar and top toolbar
 	
 }
-//////////////////////////////////////////////////////////////////////////////////////////
 //Draws the menu (toolbar) in the Design mode
 void Output::CreateDesignToolBar() const
 {
 	UI.AppMode = DESIGN;	//Design Mode
+	
 
-	//You can draw the tool bar icons in any way you want.
-
-	//First prepare List of images for each menu item
+	//Images in the menu bar 
 	string MenuItemImages[ITM_DSN_CNT];
 	MenuItemImages[ITM_AND2] = "..\\Images\\Menu\\Menu_AND2.jpg";
 	MenuItemImages[ITM_OR2]  = "..\\Images\\Menu\\Menu_OR2.jpg";
@@ -116,24 +96,20 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_SIM_MODE] = "..\\Images\\Menu\\Menu_changeMood.jpg";
 	//MenuItemImages[ITM_DSN_MODE] = "..\\Images\\Menu\\Menu_Design.jpg";*/
 
-	//TODO: Prepare image for each menu item and add it to the list
 
 	//Draw menu item one image at a time
-	for (int i = 0; i < ITM_DSN_CNT; i++) //ba3d ma n7ot ba2i el swar nebadel el 5 di bel ITM_DSN_CNT
+	for (int i = 0; i < ITM_DSN_CNT; i++) 
 		pWind->DrawImage(MenuItemImages[i],i*UI.ToolItemWidth,0,UI.ToolItemWidth, UI.ToolBarHeight);
 
-
-	//Draw a line under the toolbar
+	//This is a line under the toolbar
 	pWind->SetPen(BLACK,3);
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);	
-
 }
 
 void Output::CreateBottomToolBar() const
 {
-	// prepare list of images
+	// Images in the bottom menu
 	string BottomItemImages[ITM_BTM_CNT];
-
 	BottomItemImages[ITM_UNDO_B] = "..\\Images\\Menu\\Undo.jpg";
 	BottomItemImages[ITM_REDO_B] ="..\\Images\\Menu\\Redo.jpg";
 	BottomItemImages[ITM_SAVE_B] = "..\\Images\\Menu\\Save.jpg";
@@ -143,11 +119,7 @@ void Output::CreateBottomToolBar() const
 	BottomItemImages[ITM_copy_B] = "..\\Images\\Menu\\Copy.jpg";
 	BottomItemImages[ITM_cut_B] = "..\\Images\\Menu\\cut.jpg";
 	
-	
-
-
 	int y = UI.height - UI.StatusBarHeight - UI.ToolBarHeight;
-
 
 	for (int i = 0; i < ITM_BTM_CNT; i++)
 		pWind->DrawImage(BottomItemImages[i], i * UI.ToolItemWidth, y,
@@ -158,15 +130,6 @@ void Output::CreateBottomToolBar() const
 	pWind->DrawLine(0, y, UI.width, y);
 }
 
-//The function essentially maps screen coordinates to specific toolbar functions.
-
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////
 //Draws the menu (toolbar) in the simulation mode
 void Output::CreateSimulationToolBar() const
 {
@@ -196,10 +159,7 @@ void Output::CreateSimulationToolBar() const
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 }
 
-//======================================================================================//
-//								Components Drawing Functions							//
-//======================================================================================//
-
+// Components of the circuit
 void Output::DrawAND2(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	string GateImage;
@@ -251,15 +211,12 @@ void Output::DrawXNOR2(GraphicsInfo r_GfxInfo, bool selected) const
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.XNOR2_Width, UI.XNOR2_Height);
 }
 
-
 void Output::DrawLED(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	string GateImage = "..\\Images\\Gates\\LED.jpg";  
 
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.LED_Width, UI.LED_Height);
 }
-
-
 
 void Output::DrawNAND2(GraphicsInfo r_GfxInfo, bool selected) const
 {
@@ -269,8 +226,6 @@ void Output::DrawNAND2(GraphicsInfo r_GfxInfo, bool selected) const
 	else
 		GateImage = "..\\Images\\Gates\\Gate_NAND2.jpg";
 
-	// Draw NAND2 gate
-	//mari
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.NAND2_Width, UI.NAND2_Height);
 }
 
@@ -322,8 +277,6 @@ void Output::DrawNOR3(GraphicsInfo r_GfxInfo, bool selected) const
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
 }
 
-//omar
-
 void Output::DrawINV(GraphicsInfo r_GfxInfo, bool selected) const
 {
 	string GateImage;
@@ -360,38 +313,26 @@ void Output::DrawSWITCH(GraphicsInfo r_GfxInfo, bool selected) const
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.OR2_Width, UI.OR2_Height);
 }
 
-
-
-
-
-
 void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 {
-
 	// set pen color based on selection
 	if (selected)
 		pWind->SetPen(UI.SelectColor, 3);
 	else
 		pWind->SetPen(UI.ConnColor, 3);
 
-	// draw an l-shaped connection
-	// this simple logic handles straight horizontal, straight vertical, and broken lines
-
+	// Draw Straight Line if the points of X or the points of y are equal 
 	if (r_GfxInfo.x1 == r_GfxInfo.x2 || r_GfxInfo.y1 == r_GfxInfo.y2) {
 		pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, r_GfxInfo.x2, r_GfxInfo.y2);
 		return;
 	}
-
+//if the points not equal we will make L connection to avoid overlapping
 	int midx = (r_GfxInfo.x1 + r_GfxInfo.x2) / 2;
 	pWind->DrawLine(r_GfxInfo.x1, r_GfxInfo.y1, midx, r_GfxInfo.y1);
 	pWind->DrawLine(midx, r_GfxInfo.y1, midx, r_GfxInfo.y2);
 	pWind->DrawLine(midx, r_GfxInfo.y2, r_GfxInfo.x2, r_GfxInfo.y2);
 
 }
-
-
-
-
 
 void Output::DrawString(int x, int y, string msg) const
 {
@@ -400,10 +341,7 @@ void Output::DrawString(int x, int y, string msg) const
 	pWind->DrawString(x, y, msg);
 }
 
-
 Output::~Output()
 {
 	delete pWind;
 }
-
-
