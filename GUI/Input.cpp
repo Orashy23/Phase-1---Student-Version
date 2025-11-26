@@ -3,7 +3,6 @@
 //#include<iostream>
 //using namespace std;
 
-
 Input::Input(window* pW)
 {
 	pWind = pW; //point to the passed window
@@ -46,24 +45,16 @@ string Input::GetString(Output *pOut)
 		pOut->PrintMsg("Enter your string: " + input);
 	}
 	pOut->PrintMsg(input + " is saved.");
-	///TODO: Implement this Function
-	//Read a complete string from the user until the user presses "ENTER".
-	//If the user presses "ESCAPE". This function should return an empty string.
-	//"BACKSPACE" should be also supported
-	//User should see what he is typing at the status bar
-
+	
 	return input;
 }
-//Gharbawy
 
-//This function reads the position where the user clicks to determine the desired action
+//Reads where the user clicks to determine the desired action
 ActionType Input::GetUserAction() const
 {	
 	int x,y;
 	pWind->WaitMouseClick(x, y);	//Get the coordinates of the user click
 
-    // Left toolbar click check - fixed 
-   
 
 	if(UI.AppMode == DESIGN )	//application is in design mode
 	{
