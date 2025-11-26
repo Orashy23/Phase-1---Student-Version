@@ -12,7 +12,7 @@ Output::Output()
 	UI.DrawColor = BLACK;
 	UI.SelectColor = BLUE;
 	UI.ConnColor = RED;
-	UI.MsgColor = BLUE;
+	UI.MsgColor = DARKGREEN;
 	UI.BkGrndColor = WHITE;
 
 	//Initilaize colors for the toolbar
@@ -51,7 +51,7 @@ void Output::ChangeTitle(string Title) const
 //////////////////////////////////////////////////////////////////////////////////
 void Output::CreateStatusBar() const
 {
-	pWind->SetPen(RED,3);
+	pWind->SetPen(BLACK,3);
 	pWind->DrawLine(0, UI.height-UI.StatusBarHeight, UI.width, UI.height-UI.StatusBarHeight);
 }
 //////////////////////////////////////////////////////////////////////////////////
@@ -83,9 +83,9 @@ void Output::ClearStatusBar()const
 //Clears the drawing (desgin) area
 void Output::ClearDrawingArea() const
 {
-	pWind->SetPen(RED, 1);
+	pWind->SetPen(BLACK, 1);
 	pWind->SetBrush(WHITE);
-	pWind->DrawRectangle(UI.LeftToolBarWidth, UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight); //start drawing after the left toolbar and top toolbar
+	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.width, UI.height -UI.ToolBarHeight- UI.StatusBarHeight); //start drawing after the left toolbar and top toolbar
 	
 }
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -124,7 +124,7 @@ void Output::CreateDesignToolBar() const
 
 
 	//Draw a line under the toolbar
-	pWind->SetPen(RED,3);
+	pWind->SetPen(BLACK,3);
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);	
 
 }
@@ -142,6 +142,8 @@ void Output::CreateBottomToolBar() const
 	BottomItemImages[ITM_paste_B] = "..\\Images\\Menu\\Paste.jpg";
 	BottomItemImages[ITM_copy_B] = "..\\Images\\Menu\\Copy.jpg";
 	BottomItemImages[ITM_cut_B] = "..\\Images\\Menu\\cut.jpg";
+	
+	
 
 
 	int y = UI.height - UI.StatusBarHeight - UI.ToolBarHeight;
@@ -152,7 +154,7 @@ void Output::CreateBottomToolBar() const
 			UI.ToolItemWidth, UI.ToolBarHeight);
 
 
-	pWind->SetPen(RED, 3);
+	pWind->SetPen(BLACK, 3);
 	pWind->DrawLine(0, y, UI.width, y);
 }
 
@@ -169,6 +171,7 @@ void Output::CreateBottomToolBar() const
 void Output::CreateSimulationToolBar() const
 {
 	UI.AppMode = SIMULATION;	//Simulation Mode
+
 
 	//TODO: Write code to draw the simualtion toolbar (similar to that of design toolbar drawing)
 	
@@ -375,7 +378,7 @@ void Output::DrawConnection(GraphicsInfo r_GfxInfo, bool selected) const
 void Output::DrawString(int x, int y, string msg) const
 {
 	pWind->SetPen(UI.MsgColor);
-	pWind->SetFont(50, BOLD, BY_NAME, "Arial");
+	pWind->SetFont(20, BOLD, BY_NAME, "Arial");
 	pWind->DrawString(x, y, msg);
 }
 

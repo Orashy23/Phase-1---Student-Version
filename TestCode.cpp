@@ -5,7 +5,7 @@
 
 void prntlocation(int& x, int &y, Output * pOut, Input* pIn)
 {
-	while (x < 80 || x > 1800 || y < 80 || y > 600) // to prevent adding gate outside drawing area
+	while (x < 0 || x > 1800 || y < 80 || y > 450) // to prevent adding gate outside drawing area
 	{
 	
 		pOut->PrintMsg("Invalid location, please click inside the drawing area");
@@ -229,11 +229,11 @@ int main()
 	pOut->PrintMsg("Please enter a string");
 	string s = pIn->GetString(pOut);
 	pOut->ClearStatusBar();
-	pOut->DrawString(400, 200, s);
+	pOut->DrawString(10, 80, s);
 
 
 	pIn->GetPointClicked(x, y);	//Wait for any click
-	pOut->ClearDrawingArea();
+	//pOut->ClearDrawingArea();
 
 	///////////////////////////////////////////////////////////////////////////////////
 	// TEST 4: Check for the user action

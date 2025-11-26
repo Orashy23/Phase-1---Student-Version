@@ -29,7 +29,6 @@ enum ActionType
 	CHANGE_SWITCH,		//Change Switch Status in Simulation Mode
 
 	SELECT,		//Select a Component, a Connection
-	UNSELECT,	//Unselect a Component, a Connection
 	DEL,		//Delete a Component, a Connection
 	MOVE,		//Move a Component, a Connection
 
@@ -104,6 +103,7 @@ enum BottomMenuItem
 	ITM_paste_B,
 	ITM_cut_B,
 	ITM_BTM_CNT
+	
 };
 
 enum SimMenuItem //The items of the simulation menu

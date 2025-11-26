@@ -22,6 +22,7 @@ struct UI_Info	//User Interface Info.
 						StatusBarHeight = 50,	//Status Bar Height
 						ToolBarHeight = 80,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
 						ToolItemWidth = 80;		//Width of each item in toolbar menu
+						
 static const int LeftToolBarWidth = 80;
 static const int LeftButtonHeight = 60;
 
