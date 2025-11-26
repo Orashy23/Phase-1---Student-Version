@@ -99,45 +99,50 @@ ActionType Input::GetUserAction() const
 
 			default: return DSN_TOOL;	//A click on empty place in desgin toolbar
 			}
+			
+			
 		}
-	
-	
+		if (y >= UI.height - UI.ToolBarHeight - UI.StatusBarHeight && y < UI.height - UI.StatusBarHeight)
+		{
+			//Check whick Menu item was clicked
+			//==> This assumes that menu items are lined up horizontally <==
+			int ClickedItemOrder = (x / UI.ToolItemWidth);
+			//Divide x coord of the point clicked by the menu item width (int division)
+			//if division result is 0 ==> first item is clicked, if 1 ==> 2nd item and so on
+			//TODO add the rest of the gates
+			switch (ClickedItemOrder)
+			{
+
+			case ITM_UNDO_B: return UNDO;
+			case ITM_copy_B: return COPY;
+			case ITM_paste_B: return PASTE;
+			case ITM_cut_B: return CUT;
+			case ITM_REDO_B: return REDO;
+			case ITM_SAVE_B: return SAVE;
+			case ITM_delete_B: return DEL;
+			case ITM_EDIT_B: return EDIT_LABEL;
+
+			default: return BOT_TOOL;	//A click on empty place in desgin toolbar
+			}
+		}
 		//[2] User clicks on the drawing area
-		if ( y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
+		if ( y >= UI.ToolBarHeight && y < UI.height - UI.ToolBarHeight - UI.StatusBarHeight)
 		{
 			return SELECT;	//user want to select/unselect a component
 		}
 		
 		//[3] User clicks on the status bar
-		return STATUS_BAR;
+		if ( y >= UI.height - UI.StatusBarHeight)
+		{
+			return STATUS_BAR;
+		}
 	}
 	else	//Application is in Simulation mode TODO
 	{
 		return SIM_MODE;	//This should be changed after creating the compelete simulation bar 
 	}
 	// If user clicks on the bottomToolbar
-	if (y >= UI.height - UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
-	{
-		//Check whick Menu item was clicked
-		//==> This assumes that menu items are lined up horizontally <==
-		int ClickedItemOrder = (x / UI.ToolItemWidth);
-		//Divide x coord of the point clicked by the menu item width (int division)
-		//if division result is 0 ==> first item is clicked, if 1 ==> 2nd item and so on
-		//TODO add the rest of the gates
-		switch (ClickedItemOrder)
-		{
-			
-		case ITM_UNDO_B: return UNDO;
-		case ITM_copy_B: return COPY;
-		case ITM_paste_B: return PASTE;
-		case ITM_cut_B: return CUT;
-		case ITM_REDO_B: return REDO;
-		case ITM_SAVE_B: return SAVE;
-		case ITM_delete_B: return DEL;
-		
-		default: return ;	//A click on empty place in desgin toolbar
-		}
-	}
+	
 
 }
 

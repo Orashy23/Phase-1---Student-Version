@@ -480,8 +480,73 @@ int main()
 			pOut->CreateDesignToolBar();
 			break;
 		}
+		case SAVE:
+		{
+			pOut->PrintMsg("Action: Save the whole Circuit to a file, Click anywhere");
+			break;
 
-
+		}
+		case LOAD:
+		{
+			pOut->PrintMsg("Action: Load a Circuit from a file, Click anywhere");
+			break;
+		}
+		case DEL:
+		{
+			pOut->PrintMsg("Action: Delete a Component, a Connection, Click anywhere");
+			break;
+		}
+		case MOVE:
+		{
+			pOut->PrintMsg("Action: Move a Component, a Connection, Click anywhere");
+			break;
+		}
+		case UNDO:
+		{
+			pOut->PrintMsg("Action: Undo the last Action performed, Click anywhere");
+			break;
+		}
+		case REDO:
+		{
+			pOut->PrintMsg("Action: Redo the last Action canceled, Click anywhere");
+			break;
+		}
+		case COPY:
+		{
+			pOut->PrintMsg("Action: Copy a Component, a Connection, Click anywhere");
+			break;
+		}
+		case PASTE:
+		{
+			pOut->PrintMsg("Action: Paste a Component, a Connection, Click anywhere");
+			break;
+		}
+		case CUT:
+		{
+			pOut->PrintMsg("Action: Cut a Component, a Connection, Click anywhere");
+			break;
+		}
+		case CREATE_TRUTH_TABLE:
+		{
+			pOut->PrintMsg("Action: Create Truth Table of the Circuit, Click anywhere");
+			break;
+		}
+		case
+			CHANGE_SWITCH:
+		{
+			pOut->PrintMsg("Action: Change Switch Status in Simulation Mode, Click anywhere");
+			break;
+		}
+		case BOT_TOOL:
+		{
+			pOut->PrintMsg("Action: a click on empty area in the Bottom Tool Bar, Click anywhere");
+			break;
+		}
+		case EDIT_LABEL:
+		{
+			pOut->PrintMsg("Action: Edit Label of a Component, a Connection, Click anywhere");
+			break;
+		}
 		case EXIT:
 		{
 			break;
