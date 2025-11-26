@@ -93,9 +93,7 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_SWITCH] = "..\\Images\\Menu\\Menu_SWITCH.jpg"; 
 	MenuItemImages[ITM_CONNECTION] = "..\\Images\\Menu\\Menu_connection.jpg";
 	MenuItemImages[ITM_LED] = "..\\Images\\Menu\\Menu_LED.jpg"; //recheck 3a4an fi errors
-	MenuItemImages[ITM_SIM_MODE] = "..\\Images\\Menu\\Menu_changeMood.jpg";
-	MenuItemImages[ITM_LED] = "..\\Images\\Menu\\Menu_LED.jpg"; 
-	//MenuItemImages[ITM_SIM_MODE] = "..\\Images\\Menu\\Menu_Simulation.jpg";
+	MenuItemImages[ITM_SIM_MODE] = "..\\Images\\Menu\\Menu_changeMode.jpg";
 
 	//MenuItemImages[ITM_DSN_MODE] = "..\\Images\\Menu\\Menu_Design.jpg";*/
 
@@ -148,7 +146,7 @@ void Output::CreateSimulationToolBar() const
 	MenuItemImages[ITM_VALIDATE] = "..\\Images\\Menu\\Menu_Validate.jpg";
 	MenuItemImages[ITM_SIMULATE] = "..\\Images\\Menu\\Menu_Simulate.jpg";
 	MenuItemImages[ITM_TRUTH_TABLE] = "..\\Images\\Menu\\Menu_TruthTable.jpg";
-	MenuItemImages[ITM_DSN_MODE] = "..\\Images\\Menu\\Menu_changeMood.jpg";
+	MenuItemImages[ITM_DSN_MODE] = "..\\Images\\Menu\\Menu_changeMode.jpg";
 	MenuItemImages[ITM_CHANGE_SWITCH] = "..\\Images\\Menu\\Menu_ChangeSwitch.jpg";
 	MenuItemImages[ITM_EXIT2] = "..\\Images\\Menu\\Menu_Exit.jpg";
 
