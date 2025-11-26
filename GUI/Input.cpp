@@ -1,7 +1,5 @@
 #include "Input.h"
 #include "Output.h"
-//#include<iostream>
-//using namespace std;
 
 Input::Input(window* pW)
 {
@@ -62,11 +60,9 @@ ActionType Input::GetUserAction() const
 		if ( y >= 0 && y < UI.ToolBarHeight)
 		{	
 			//Check whick Menu item was clicked
-			//==> This assumes that menu items are lined up horizontally <==
 			int ClickedItemOrder = (x / UI.ToolItemWidth);
 			//Divide x coord of the point clicked by the menu item width (int division)
-			//if division result is 0 ==> first item is clicked, if 1 ==> 2nd item and so on
-
+			
 			//TODO add the rest of the gates
 			switch (ClickedItemOrder)
 			{
@@ -85,12 +81,9 @@ ActionType Input::GetUserAction() const
 			case ITM_SWITCH: return ADD_SWITCH;
 			case ITM_LED: return ADD_LED;
 			case ITM_EXIT: return EXIT;
-
-			
-
+	
 			default: return DSN_TOOL;	//A click on empty place in desgin toolbar
-			}
-			
+			}			
 			
 		}
 		if (y >= UI.height - UI.ToolBarHeight - UI.StatusBarHeight && y < UI.height - UI.StatusBarHeight)
@@ -127,7 +120,9 @@ ActionType Input::GetUserAction() const
 		{
 			return STATUS_BAR;
 		}
+		
 	}
+	
 	else	//Application is in Simulation mode TODO
 	{
 		return SIM_MODE;	//This should be changed after creating the compelete simulation bar 
@@ -137,16 +132,10 @@ ActionType Input::GetUserAction() const
 
 }
 
-//Orashy
-
 
 Input::~Input()
 {
+	
 }
 
-//oo
 
-
-
-
-//mari
