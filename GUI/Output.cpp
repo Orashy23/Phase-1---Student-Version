@@ -113,7 +113,7 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_SWITCH] = "..\\Images\\Menu\\Menu_SWITCH.jpg"; 
 	MenuItemImages[ITM_CONNECTION] = "..\\Images\\Menu\\Menu_connection.jpg";
 	MenuItemImages[ITM_LED] = "..\\Images\\Menu\\Menu_LED.jpg"; //recheck 3a4an fi errors
-	//MenuItemImages[ITM_SIM_MODE] = "..\\Images\\Menu\\Menu_Simulation.jpg";
+	MenuItemImages[ITM_SIM_MODE] = "..\\Images\\Menu\\Menu_changeMood.jpg";
 	//MenuItemImages[ITM_DSN_MODE] = "..\\Images\\Menu\\Menu_Design.jpg";*/
 
 	//TODO: Prepare image for each menu item and add it to the list
@@ -172,10 +172,28 @@ void Output::CreateSimulationToolBar() const
 {
 	UI.AppMode = SIMULATION;	//Simulation Mode
 
+	pWind->SetBrush(WHITE);
+	pWind->SetPen(UI.ToolBarBorderColor);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
+	pWind->DrawRectangle(0, UI.height - UI.StatusBarHeight - UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight);
 
-	//TODO: Write code to draw the simualtion toolbar (similar to that of design toolbar drawing)
-	
+	// Prepare list of images for simulation toolbar
+	string MenuItemImages[ITM_SIM_CNT];
+	MenuItemImages[ITM_VALIDATE] = "..\\Images\\Menu\\Menu_Validate.jpg";
+	MenuItemImages[ITM_SIMULATE] = "..\\Images\\Menu\\Menu_Simulate.jpg";
+	MenuItemImages[ITM_TRUTH_TABLE] = "..\\Images\\Menu\\Menu_TruthTable.jpg";
+	MenuItemImages[ITM_DSN_MODE] = "..\\Images\\Menu\\Menu_changeMood.jpg";
+	MenuItemImages[ITM_CHANGE_SWITCH] = "..\\Images\\Menu\\Menu_ChangeSwitch.jpg";
+	MenuItemImages[ITM_EXIT2] = "..\\Images\\Menu\\Menu_Exit.jpg";
 
+	// Draw menu items
+	for (int i = 0; i < ITM_SIM_CNT; i++)
+		pWind->DrawImage(MenuItemImages[i], i * UI.ToolItemWidth, 0,
+			UI.ToolItemWidth, UI.ToolBarHeight);
+
+	// Draw a line under the toolbar
+	pWind->SetPen(BLACK, 3);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 }
 
 //======================================================================================//

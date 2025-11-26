@@ -21,7 +21,7 @@ int main()
 	Output* pOut = new Output();;
 	Input* pIn = pOut->CreateInput();
 
-	
+
 	//Starting the test
 	pOut->PrintMsg("This demo is to test input and output classes, Click anywhere to start the test");
 	pIn->GetPointClicked(x, y);	//Wait for any click
@@ -244,11 +244,11 @@ int main()
 
 	///TODO:  You must add a case for each action
 	//Add cases for the missing actions below
-	
+
 	do
 	{
 		ActType = pIn->GetUserAction();
-		
+
 		switch (ActType)
 		{
 		case ADD_BUFF:
@@ -320,7 +320,7 @@ int main()
 			GfxInfo.y1 = y;
 			pOut->ChangeTitle("2 input OR Gate Added at (" + to_string(x) + "," + to_string(y) + ")");
 			pOut->DrawOR2(GfxInfo, false);
-			
+
 		}
 		break;
 
@@ -462,24 +462,6 @@ int main()
 
 			break;
 		}
-
-		case SIM_MODE:
-		{
-			pOut->PrintMsg("Action: Switch to Simulation Mode, creating simualtion tool bar");
-
-
-			pOut->CreateSimulationToolBar();
-			break;
-		}
-
-		case DSN_MODE:
-		{
-			pOut->PrintMsg("Action: Switch to Design Mode, creating Design tool bar");
-
-
-			pOut->CreateDesignToolBar();
-			break;
-		}
 		case SAVE:
 		{
 			pOut->PrintMsg("Action: Save the whole Circuit to a file, Click anywhere");
@@ -526,13 +508,7 @@ int main()
 			pOut->PrintMsg("Action: Cut a Component, a Connection, Click anywhere");
 			break;
 		}
-		case CREATE_TRUTH_TABLE:
-		{
-			pOut->PrintMsg("Action: Create Truth Table of the Circuit, Click anywhere");
-			break;
-		}
-		case
-			CHANGE_SWITCH:
+		case CHANGE_SWITCH:
 		{
 			pOut->PrintMsg("Action: Change Switch Status in Simulation Mode, Click anywhere");
 			break;
@@ -553,8 +529,8 @@ int main()
 		}
 
 
-		case ADD_CONNECTION: 
-		
+		case ADD_CONNECTION:
+
 		{
 			pOut->PrintMsg("Action: Add Connection - Click on the START point");
 			int x1, y1, x2, y2;
@@ -573,28 +549,55 @@ int main()
 			GfxInfo.x2 = x2;
 			GfxInfo.y2 = y2;
 
-			pOut->ChangeTitle("Connection Added from (" + to_string(x1) + "," + to_string(y1) +") to (" + to_string(x2) + "," + to_string(y2) + ")");
+			pOut->ChangeTitle("Connection Added from (" + to_string(x1) + "," + to_string(y1) + ") to (" + to_string(x2) + "," + to_string(y2) + ")");
 			pOut->DrawConnection(GfxInfo, false);
 		}
 		break;
+		case DSN_MODE:
+		{
+			pOut->PrintMsg("Action: Switch to Design Mode, creating Design tool bar");
+			pOut->CreateDesignToolBar();
+			pOut->CreateBottomToolBar();
+			pOut->PrintMsg("Design Mode Activated");
+		}
+		break;
 
+		case SIM_MODE:
+		{
+			pOut->PrintMsg("Action: Switch to Simulation Mode, creating simualtion tool bar");
+			pOut->CreateSimulationToolBar();
+		}
+
+		break;
+		case VALIDATE:
+		{
+			pOut->PrintMsg("Action: Validate the circuit, Click anywhere");
+			break;
+		}
+		case SIMULATE:
+		{
+			pOut->PrintMsg("Action: Simulate the circuit, Click anywhere");
+			break;
+		}
+		case CREATE_TRUTH_TABLE:
+		{
+			pOut->PrintMsg("Action: Create Truth Table of the Circuit, Click anywhere");
+			break;
+		}
 
 		}
-		}while (ActType != EXIT); //mmken tet4al
+	}while (ActType != EXIT); //mmken tet4al
 
 
 		/// Exiting
 		pOut->PrintMsg("Action: EXIT, test is finished");
-		
 
-		
+
+
 
 		delete pIn;
 		delete pOut;
 
 		return 0;
-	}
 	
-	
-
-	
+}

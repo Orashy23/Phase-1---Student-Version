@@ -94,6 +94,8 @@ ActionType Input::GetUserAction() const
 			case ITM_SWITCH: return ADD_SWITCH;
 			case ITM_LED: return ADD_LED;
 			case ITM_EXIT: return EXIT;
+			case ITM_SIM_MODE: return SIM_MODE;
+					
 
 			
 
@@ -137,11 +139,35 @@ ActionType Input::GetUserAction() const
 			return STATUS_BAR;
 		}
 	}
-	else	//Application is in Simulation mode TODO
+	else if (UI.AppMode == SIMULATION)//Application is in Simulation mode TODO
 	{
-		return SIM_MODE;	//This should be changed after creating the compelete simulation bar 
+		if (y >= 0 && y < UI.ToolBarHeight)
+		{
+			int ClickedItemOrder = (x / UI.ToolItemWidth);
+			switch (ClickedItemOrder)
+			{
+			case ITM_VALIDATE: return VALIDATE;
+			case ITM_SIMULATE: return SIMULATE;
+			case ITM_TRUTH_TABLE: return CREATE_TRUTH_TABLE;
+			case ITM_DSN_MODE: return DSN_MODE;
+			case ITM_CHANGE_SWITCH: return CHANGE_SWITCH;
+			case ITM_EXIT2: return EXIT;
+			default: return SIM_TOOL;	//A click on empty place in simulation toolbar
+			}
+		}
+		//[2] User clicks on the drawing area
+		if (y >= UI.ToolBarHeight && y < UI.height - UI.ToolBarHeight - UI.StatusBarHeight)
+		{
+			return SELECT;	//user want to select/unselect a component
+		}
+		//[3] User clicks on the status bar
+		if (y >= UI.height - UI.StatusBarHeight)
+		{
+			return STATUS_BAR;
+		}
+	
 	}
-	// If user clicks on the bottomToolbar
+	
 	
 
 }

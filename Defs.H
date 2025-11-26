@@ -50,6 +50,9 @@ enum ActionType
 	STATUS_BAR,		//A click on the status bar
 	DSN_TOOL,	//A click on an empty place in the design tool bar
 	BOT_TOOL, //A click on an empty place in the bottom tool bar
+	SIM_TOOL,	//A click on an empty place in the simulation tool bar
+	VALIDATE,
+	SIMULATE,
 };
 
 
@@ -89,6 +92,7 @@ enum DsgnMenuItem //The items of the design menu
 	ITM_SWITCH,
 	ITM_CONNECTION,
 	ITM_LED,
+	ITM_SIM_MODE,
 	ITM_EXIT,
 	ITM_DSN_CNT		//no. of design menu items ==> This should be the last line in this enum
 };
@@ -108,10 +112,13 @@ enum BottomMenuItem
 };
 
 enum SimMenuItem //The items of the simulation menu
-{
-	ITM_SIM,	//Simulate menu item
-	ITM_TRUTH,	//Truth table menu item
-	ITM_SIM_CNT		//no. of simulation menu items ==> This should be the last line in this enum
+{	ITM_VALIDATE,      // Validate circuit
+	ITM_SIMULATE,      // Start/Run simulation
+	ITM_TRUTH_TABLE,   // Generate truth table
+	ITM_DSN_MODE,      // Switch back to design mode   
+	ITM_CHANGE_SWITCH, // Change switch status
+	ITM_EXIT2,
+	ITM_SIM_CNT //no. of simulation menu items ==> This should be the last line in this enum
 };
 
 
