@@ -1,73 +1,57 @@
 #include "Output.h"
 
-
-
 Output::Output()
 {
-	//Initialize user interface parameters
-
-	UI.AppMode = DESIGN;	//Design Mode is the startup mode
-
+	UI.AppMode = DESIGN;		
 	//Initilaize interface colors
 	UI.DrawColor = BLACK;
 	UI.SelectColor = BLUE;
 	UI.ConnColor = RED;
 	UI.MsgColor = DARKGREEN;
 	UI.BkGrndColor = WHITE;
-
-	//Initilaize colors for the toolbar
-	
-	
 	//Create the drawing window
 	pWind = CreateWind(UI.width, UI.height, UI.wx, UI.wy);	
 	ChangeTitle("Programming Techniques Project");
 
-	CreateDesignToolBar();	//Create the desgin toolbar
-	CreateStatusBar();		//Create Status bar
-	CreateBottomToolBar();
+	CreateDesignToolBar();	//Create desgin toolbar
+	CreateStatusBar();		//Create Statusbar
+	CreateBottomToolBar();  // Create bottom toolbar
 }
-
 Input* Output::CreateInput() const
 {
 	//Create an Input Object & assign it to the Same Window
 	Input* pIn = new Input(pWind);
 	return pIn;
 }
-
-
-//======================================================================================//
-//								Interface Functions										//
-//======================================================================================//
+//Interface Functions
 
 window* Output::CreateWind(int wd, int h, int x, int y) const
 {
 	return new window(wd, h, x, y);
 }
-//////////////////////////////////////////////////////////////////////////////////
+
 void Output::ChangeTitle(string Title) const
 {
 	pWind->ChangeTitle(Title);
 }
-//////////////////////////////////////////////////////////////////////////////////
+
 void Output::CreateStatusBar() const
 {
 	pWind->SetPen(BLACK,3);
 	pWind->DrawLine(0, UI.height-UI.StatusBarHeight, UI.width, UI.height-UI.StatusBarHeight);
 }
-//////////////////////////////////////////////////////////////////////////////////
+
 void Output::PrintMsg(string msg) const
 {
-	ClearStatusBar();	//Clear Status bar to print message on it
-	// Set the Message offset from the Status Bar
+	ClearStatusBar();
 	int MsgX = 25;
 	int MsgY = UI.StatusBarHeight - 10;
-
-	// Print the Message
+	
     pWind->SetFont(20, BOLD | ITALICIZED, BY_NAME, "Arial"); 
 	pWind->SetPen(UI.MsgColor); 
 	pWind->DrawString(MsgX, UI.height - MsgY, msg);
 }
-//////////////////////////////////////////////////////////////////////////////////
+
 void Output::ClearStatusBar()const
 {
 	// Set the Message offset from the Status Bar
