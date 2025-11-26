@@ -152,6 +152,12 @@ ActionType Input::GetUserAction() const
 		{
 			return STATUS_BAR;
 		}
+		if (y >= UI.height - UI.ToolBarHeight - UI.StatusBarHeight &&
+			y < UI.height - UI.StatusBarHeight)
+		{
+			
+			return SIM_TOOL;  
+		}
 	
 	}
 	

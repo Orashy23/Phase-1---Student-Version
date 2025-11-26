@@ -94,6 +94,9 @@ void Output::CreateDesignToolBar() const
 	MenuItemImages[ITM_CONNECTION] = "..\\Images\\Menu\\Menu_connection.jpg";
 	MenuItemImages[ITM_LED] = "..\\Images\\Menu\\Menu_LED.jpg"; //recheck 3a4an fi errors
 	MenuItemImages[ITM_SIM_MODE] = "..\\Images\\Menu\\Menu_changeMood.jpg";
+	MenuItemImages[ITM_LED] = "..\\Images\\Menu\\Menu_LED.jpg"; 
+	//MenuItemImages[ITM_SIM_MODE] = "..\\Images\\Menu\\Menu_Simulation.jpg";
+
 	//MenuItemImages[ITM_DSN_MODE] = "..\\Images\\Menu\\Menu_Design.jpg";*/
 
 
@@ -136,9 +139,9 @@ void Output::CreateSimulationToolBar() const
 	UI.AppMode = SIMULATION;	//Simulation Mode
 
 	pWind->SetBrush(WHITE);
-	pWind->SetPen(UI.ToolBarBorderColor);
+	pWind->SetPen(WHITE);
 	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
-	pWind->DrawRectangle(0, UI.height - UI.StatusBarHeight - UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight);
+	pWind->DrawRectangle(0, UI.height - UI.StatusBarHeight - UI.ToolBarHeight-10, UI.width, UI.height - UI.StatusBarHeight);
 
 	// Prepare list of images for simulation toolbar
 	string MenuItemImages[ITM_SIM_CNT];
@@ -157,6 +160,7 @@ void Output::CreateSimulationToolBar() const
 	// Draw a line under the toolbar
 	pWind->SetPen(BLACK, 3);
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+
 }
 
 // Components of the circuit
@@ -168,7 +172,7 @@ void Output::DrawAND2(GraphicsInfo r_GfxInfo, bool selected) const
 	else
 		GateImage = "..\\Images\\Gates\\Gate_AND2.jpg";
 
-	// Draw AND2 gate at the top-left corner specified in r_GfxInfo
+	
 
 	pWind->DrawImage(GateImage, r_GfxInfo.x1, r_GfxInfo.y1, UI.AND2_Width, UI.AND2_Height);
 	
