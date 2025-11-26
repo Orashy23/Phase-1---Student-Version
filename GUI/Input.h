@@ -4,7 +4,7 @@
 #include "UI_Info.h"
 
 class Output;
-class Input		//The application manager should have a pointer to this class
+class Input		
 {
 private:
 	window *pWind;	//Pointer to the Graphics Window
